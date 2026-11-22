@@ -324,7 +324,9 @@ footer{margin:46px 0 30px;padding-top:16px;border-top:1px solid var(--line);font
     <a href="#u4"><span class="d"></span>Unit 4</a>
     <a href="#mock"><span class="d"></span>Mock test</a>
     <a href="#lab">Lab</a>
-    <a href="#final"><span class="d f"></span>Units 5–6</a>
+    <a href="#final"><span class="d f"></span>Part B</a>
+    <a href="#u5">Unit 5</a>
+    <a href="#u6">Unit 6</a>
     <a href="#src">Sources</a>
     <span class="sp"></span>
     <button class="tbtn" id="themeBtn" type="button" aria-label="Switch light or dark theme">◐ Theme</button>
@@ -2603,7 +2605,7 @@ wait(s2);          wait(s1);
       <div class="mm-g" style="--b:var(--c2)"><b>Partitions</b><a class="ct" href="#u4-cont">Fixed vs variable</a><a class="ct" href="#u4-fits">First / best / worst fit</a><a class="ct" href="#u4-frag">Fragmentation + compaction</a></div>
       <div class="mm-g" style="--b:var(--c3)"><b>Paging</b><a class="ct" href="#u4-paging">Page → frame</a><a class="ct" href="#u4-tlb">TLB + EAT</a><a class="ct" href="#u4-prot">Valid bit, shared pages</a><a class="ct" href="#u4-pt">Page table types</a></div>
       <div class="mm-g" style="--b:var(--c4)"><b>Virtual memory</b><a class="ct" href="#u4-vm">The idea</a><a class="ct" href="#u4-dp">Demand paging</a><a class="ct" href="#u4-repl">FIFO / OPT / LRU</a><a class="ct" href="#ex-q4">Q4 solved</a><a class="ct x" href="#u4-alloc">Frame allocation</a><a class="ct x" href="#u4-fetch">Fetch policy</a><a class="ct" href="#u4-thrash">Thrashing</a><a class="ct" href="#u4-other">Page size, program structure</a></div>
-      <div class="mm-g" style="--b:var(--c6)"><b>Not in class test</b><a href="#final">Segmentation → Part B</a></div>
+      <div class="mm-g" style="--b:var(--c6)"><b>Not in class test</b><a href="#b-seg">Segmentation → Part B</a></div>
     </div>
   </div>
 
@@ -3400,7 +3402,7 @@ for (i = 0; i &lt; 128; i++)
         <tr><td class="row-h">Belady's anomaly</td><td>FIFO only: 1 2 3 4 1 2 5 1 2 3 4 5 → 3 frames 9 faults, 4 frames 10</td></tr>
         <tr><td class="row-h">Frames</td><td>equal 31 + 31 · proportional 4 + 57 · global (more common) vs local</td></tr>
         <tr><td class="row-h">Thrashing</td><td>busy swapping pages, not working · fix: local/priority replacement, working set, PFF, fewer processes</td></tr>
-        <tr><td class="row-h">Segmentation</td><td>not in the class test: see <a href="#final">Part B</a> (it is in the final exam)</td></tr>
+        <tr><td class="row-h">Segmentation</td><td>not in the class test: see <a href="#b-seg">Part B</a> (it is in the final exam)</td></tr>
       </tbody>
     </table></div>
   </article>
@@ -3874,9 +3876,1003 @@ while (true) {
 
 <div class="part fin" id="final">
   <div class="kicker">Part B</div>
-  <h2>Not in the class test · segmentation, Unit 5, Unit 6</h2>
-  <p>Skip this part for the 21 Oct class test. <b>The final exam covers all units (1–6)</b>: everything in Part A above, plus this part. Being written: this page updates at the same link.</p>
+  <h2>Final exam extras · segmentation, Unit 5, Unit 6</h2>
+  <p>These were not in the 21 Oct class test. <b>The final exam covers all units (1–6)</b>: everything in Part A above, plus this part. Grey <span class="tag fin">FINAL</span> tags mark Part B cards.</p>
 </div>
+
+<section class="unit" id="b-start">
+  <div class="unit-h">
+    <div class="no">Part B · start here</div>
+    <h2>Part B on one map</h2>
+    <p>Segmentation finishes Unit 4. Unit 5 is how files and folders work. Unit 6 is the hard disk: its parts, its size, and the order it serves requests.</p>
+    <div class="tags"><span class="tag fin">FINAL</span></div>
+  </div>
+  <div class="mm" role="navigation" aria-label="Part B mind map">
+    <span class="mm-c">Part B · final exam extras</span>
+    <div class="mm-b">
+      <div class="mm-g" style="--b:var(--c6)"><b>Unit 4 · segmentation</b><a class="x" href="#b-seg">Segments + table</a><a class="x" href="#b-segex">Address numericals</a><a class="x" href="#b-segpg">Segmentation + paging</a><a class="x" href="#b-segsum">Summary</a></div>
+      <div class="mm-g" style="--b:var(--c3)"><b>Unit 5 · files</b><a href="#u5-attr">Attributes</a><a href="#u5-ops">Operations</a><a href="#u5-access">Access methods</a><a class="x" href="#u5-dir">Directory types</a><a href="#u5-path">Path names</a><a class="x" href="#u5-mount">Mounting</a><a class="x" href="#u5-share">Sharing</a><a href="#u5-prot">Protection</a><a class="x" href="#u5-alloc">Allocation</a></div>
+      <div class="mm-g" style="--b:var(--c2)"><b>Unit 6 · disk</b><a class="x" href="#u6-struct">Disk structure</a><a class="x" href="#u6-time">Access time</a><a class="x" href="#u6-cap">Capacity</a><a class="x" href="#u6-attach">Attachment</a><a class="x" href="#u6-fcfs">FCFS · SSTF</a><a class="x" href="#u6-scan">SCAN · C-SCAN</a><a class="x" href="#u6-look">LOOK · C-LOOK</a></div>
+      <div class="mm-g" style="--b:var(--c5)"><b>Practise</b><a href="#bprac">Part B practice questions</a><a href="#lab-disk">Disk calculator</a></div>
+    </div>
+  </div>
+
+  <article class="card" id="b-pred">
+    <div class="card-h"><h3>What Part B questions might come?</h3><div class="meta"><span class="cl">FROM CLAUDE · my guess, not a leak</span><span class="tag fin">FINAL</span></div></div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Topic</th><th>Likely form</th><th>Chance</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h"><a href="#u6-fcfs">Disk scheduling</a></td><td>numerical: total head movement with FCFS, SSTF, SCAN, C-SCAN (like the CPU and page numericals)</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="row-h"><a href="#u5-dir">Directory structures</a></td><td>theory: single, two-level, tree, acyclic, general graph + diagrams</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="row-h"><a href="#u5-alloc">Allocation methods</a></td><td>contiguous vs linked vs indexed, with a block diagram</td><td><span class="stars">★★★</span></td></tr>
+        <tr><td class="row-h"><a href="#u5-attr">File attributes</a> · <a href="#u5-ops">operations</a> · <a href="#u5-access">access methods</a></td><td>short notes / lists</td><td><span class="stars">★★<span class="o">★</span></span></td></tr>
+        <tr><td class="row-h"><a href="#b-seg">Segmentation</a></td><td>theory + "find the physical address" from a segment table</td><td><span class="stars">★★<span class="o">★</span></span></td></tr>
+        <tr><td class="row-h"><a href="#u5-mount">Mounting</a> · <a href="#u5-share">sharing</a></td><td>short notes</td><td><span class="stars">★★<span class="o">★</span></span></td></tr>
+        <tr><td class="row-h"><a href="#u6-struct">Disk structure</a> · <a href="#u6-cap">capacity</a></td><td>labelled diagram; "find the capacity" numerical</td><td><span class="stars">★★<span class="o">★</span></span></td></tr>
+        <tr><td class="row-h"><a href="#u6-attach">Disk attachment</a></td><td>short note: host-attached, NAS, SAN</td><td><span class="stars">★<span class="o">★★</span></span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip"><span><b>Final exam plan:</b> Part A numericals still carry the most marks (CPU scheduling, page replacement, Banker's). Add disk scheduling to that list: it is the easiest new full marks in Part B.</span></div>
+  </article>
+</section>
+
+<section class="unit" id="u4b">
+  <div class="unit-h">
+    <div class="no">Unit 4 (rest) · from the textbook</div>
+    <h2>Segmentation</h2>
+    <p>Your Unit 4 syllabus lists segmentation, but your ch9 slides don't cover it, so all three cards are <span class="cl">FROM CLAUDE</span> (Silberschatz 9e ch8, the book in your syllabus).</p>
+    <div class="tags"><span class="tag fin">FINAL</span></div>
+  </div>
+
+  <article class="card claude" id="b-seg">
+    <div class="card-h"><h3><span class="n">4.20</span>Segmentation: memory split the way you see your program</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §8.4</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>A programmer sees a program as separate pieces: main program, functions, stack, symbol table, arrays. <b>Segmentation</b> gives each piece its own <b>segment</b> of any size. A logical address is a pair <b>&lt;segment number s, offset d&gt;</b>. A <b>segment table</b> stores each segment's <b>base</b> (where it starts in RAM) and <b>limit</b> (its length). Physical address = <b>base + d</b>, but only if <b>d &lt; limit</b>; otherwise trap.</div>
+    <div class="dscroll" style="--mw:330px"><svg class="dg" viewBox="0 0 400 292" style="max-width:460px" role="img" aria-label="Five program segments of different sizes placed in different parts of physical memory, matched by colour">
+      <text class="tb" x="95" y="16" text-anchor="middle">Your program (logical view)</text>
+      <rect class="bxa" x="20" y="34" width="150" height="38" rx="8"/><text x="95" y="57" text-anchor="middle">seg 0 · subroutine</text>
+      <rect class="bxg" x="20" y="80" width="150" height="28" rx="8"/><text x="95" y="98" text-anchor="middle">seg 1 · sqrt</text>
+      <rect class="bxy" x="20" y="116" width="150" height="30" rx="8"/><text x="95" y="135" text-anchor="middle">seg 2 · main program</text>
+      <rect class="bxc" x="20" y="154" width="150" height="40" rx="8"/><text x="95" y="178" text-anchor="middle">seg 3 · stack</text>
+      <rect class="bxr" x="20" y="202" width="150" height="38" rx="8"/><text x="95" y="225" text-anchor="middle">seg 4 · symbol table</text>
+      <text class="ts" x="95" y="262" text-anchor="middle">each piece has its own size</text>
+      <text class="tb" x="335" y="16" text-anchor="middle">Physical memory</text>
+      <rect class="bxa" x="290" y="24" width="90" height="48"/><text x="335" y="52" text-anchor="middle">seg 0</text>
+      <rect class="bx dash" x="290" y="72" width="90" height="38"/><text class="ts" x="335" y="95" text-anchor="middle">free</text>
+      <rect class="bxc" x="290" y="110" width="90" height="53"/><text x="335" y="141" text-anchor="middle">seg 3</text>
+      <rect class="bxy" x="290" y="163" width="90" height="19"/><text x="335" y="177" text-anchor="middle">seg 2</text>
+      <rect class="bxr" x="290" y="182" width="90" height="48"/><text x="335" y="210" text-anchor="middle">seg 4</text>
+      <rect class="bx dash" x="290" y="230" width="90" height="29"/><text class="ts" x="335" y="248" text-anchor="middle">free</text>
+      <rect class="bxg" x="290" y="259" width="90" height="19"/><text x="335" y="273" text-anchor="middle">seg 1</text>
+      <text class="tm" x="284" y="28" text-anchor="end">1400</text>
+      <text class="tm" x="284" y="76" text-anchor="end">2400</text>
+      <text class="tm" x="284" y="114" text-anchor="end">3200</text>
+      <text class="tm" x="284" y="166" text-anchor="end">4300</text>
+      <text class="tm" x="284" y="186" text-anchor="end">4700</text>
+      <text class="tm" x="284" y="234" text-anchor="end">5700</text>
+      <text class="tm" x="284" y="262" text-anchor="end">6300</text>
+      <text class="tm" x="284" y="282" text-anchor="end">6700</text>
+    </svg></div>
+    <p class="cap">Based on Silberschatz 9e Fig 8.20. Same colour = same segment. Segments go anywhere in RAM, in any order.</p>
+    <div class="flow" role="img" aria-label="Segmentation address translation"><span class="a">CPU: (s, d)</span><i>→</i><span>s &lt; STLR? (segment exists)</span><i>→</i><span>read row s: limit, base</span><i>→</i><span class="y">d &lt; limit?</span><i>→</i><span class="g">yes: base + d</span></div>
+    <div class="flow" role="img" aria-label="If the offset is too big, trap"><span class="r">no → trap to the OS (addressing error)</span></div>
+    <p class="small"><b>STBR</b> (segment-table base register) = where the segment table is in memory. <b>STLR</b> (segment-table length register) = how many segments this program has.</p>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th></th><th>Paging (4.9)</th><th>Segmentation</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Pieces</td><td>pages, all the <b>same</b> size</td><td>segments, <b>different</b> sizes</td></tr>
+        <tr><td class="row-h">Address</td><td>(page p, offset d), split by the hardware</td><td>(segment s, offset d), chosen by the compiler</td></tr>
+        <tr><td class="row-h">Table row</td><td>frame number</td><td>base + limit</td></tr>
+        <tr><td class="row-h">Fragmentation</td><td>internal (last page part-empty)</td><td class="bad">external (holes between segments)</td></tr>
+        <tr><td class="row-h">User sees it?</td><td>no, it is hidden</td><td class="good">yes, it matches the program's pieces</td></tr>
+        <tr><td class="row-h">Sharing, protection</td><td>per page</td><td class="good">per segment: e.g. code read-only, shared by everyone</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip"><span><b>Everyday example:</b> a textbook split into chapters of different lengths. "Chapter 3, page 12" is (s, d). The contents page (segment table) says chapter 3 starts at page 140 (base) and has 30 pages (limit). Page 12 → 140 + 12 = 152. "Chapter 3, page 45" doesn't exist → error.</span></div>
+  </article>
+
+  <article class="card claude" id="b-segex">
+    <div class="card-h"><h3><span class="n">4.21</span>Numerical: logical (s, d) → physical address</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e Fig 8.20</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">How to solve</span>For each (s, d): find row s · check <b>d &lt; limit</b> · if yes, answer = <b>base + d</b> · if no, write <b>"trap: offset beyond segment"</b>. Remember d = limit is already illegal (offsets start at 0).</div>
+    <div class="grid2">
+      <div><div class="tscroll"><table class="tbl calc mono">
+        <thead><tr><th>Segment</th><th>Limit</th><th>Base</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>1000</td><td>1400</td></tr>
+          <tr><td>1</td><td>400</td><td>6300</td></tr>
+          <tr><td>2</td><td>400</td><td>4300</td></tr>
+          <tr><td>3</td><td>1100</td><td>3200</td></tr>
+          <tr><td>4</td><td>1000</td><td>4700</td></tr>
+        </tbody>
+      </table></div><p class="cap">The segment table for the picture in 4.20.</p></div>
+      <div class="ex"><div class="ex-h">Worked · textbook</div><div class="tscroll"><table class="tbl calc">
+        <thead><tr><th>(s, d)</th><th>Check</th><th>Physical</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">(2, 53)</td><td>53 &lt; 400 ✓</td><td class="good mono">4300 + 53 = 4353</td></tr>
+          <tr><td class="mono">(3, 852)</td><td>852 &lt; 1100 ✓</td><td class="good mono">3200 + 852 = 4052</td></tr>
+          <tr><td class="mono">(0, 1222)</td><td>1222 &lt; 1000 ✗</td><td class="bad">trap</td></tr>
+        </tbody>
+      </table></div></div>
+    </div>
+    <div class="ex"><div class="ex-h">Your turn · same table</div>
+      <p class="mono">(1, 10) · (4, 1000) · (3, 0) · (1, 399)</p>
+      <details class="ans"><summary>Answers <span class="r">answer</span></summary><div class="in"><div class="tscroll"><table class="tbl calc">
+        <thead><tr><th>(s, d)</th><th>Check</th><th>Physical</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">(1, 10)</td><td>10 &lt; 400 ✓</td><td class="good mono">6300 + 10 = 6310</td></tr>
+          <tr><td class="mono">(4, 1000)</td><td>1000 &lt; 1000 ✗</td><td class="bad">trap (the last legal offset is 999)</td></tr>
+          <tr><td class="mono">(3, 0)</td><td>0 &lt; 1100 ✓</td><td class="good mono">3200 + 0 = 3200</td></tr>
+          <tr><td class="mono">(1, 399)</td><td>399 &lt; 400 ✓</td><td class="good mono">6300 + 399 = 6699</td></tr>
+        </tbody>
+      </table></div></div></details>
+    </div>
+    <div class="tip"><span><b>How to write it in the exam:</b> copy the table, then one line per address: "(2, 53): 53 &lt; 400, so physical = 4300 + 53 = 4353". For a trap, write the failed check.</span></div>
+  </article>
+
+  <article class="card claude" id="b-segpg">
+    <div class="card-h"><h3><span class="n">4.22</span>Segmentation with paging (Intel IA-32, MULTICS)</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §8.4, §8.7</span><span class="tag fin">FINAL</span><span class="stars">★<span class="o">★★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>Pure segmentation suffers from <b>external fragmentation</b> (variable-size holes). The fix: <b>page each segment</b>. The program still sees segments, but each segment is cut into fixed-size pages, so it can sit in scattered frames. Used by <b>MULTICS</b> and Intel <b>IA-32</b> (x86).</div>
+    <div class="flow" role="img" aria-label="IA-32 address translation"><span class="a">CPU: logical address (selector, offset)</span><i>→</i><span class="y">segmentation unit</span><i>→</i><span>linear address</span><i>→</i><span class="y">paging unit</span><i>→</i><span class="g">physical address</span></div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>IA-32 fact</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Segment size</td><td>up to 4 GB</td></tr>
+        <tr><td class="row-h">Segments per process</td><td>up to 16 K (8 K private in the LDT + 8 K shared in the GDT)</td></tr>
+        <tr><td class="row-h">Selector (16 bits)</td><td>13-bit segment number · 1 bit: LDT or GDT · 2 bits: protection level</td></tr>
+        <tr><td class="row-h">Page size</td><td>4 KB (two-level paging: 10 | 10 | 12 bits) or 4 MB</td></tr>
+      </tbody>
+    </table></div>
+    <div class="grid2">
+      <div class="box good"><b>Good</b>user view of segments + protection per segment<br>no external fragmentation (pages fill any free frame)</div>
+      <div class="box bad"><b>Cost</b>two lookups per address (segment table, then page table)<br>internal fragmentation in the last page of each segment</div>
+    </div>
+  </article>
+
+  <article class="card" id="b-segsum">
+    <div class="card-h"><h3><span class="n">✓</span>Segmentation on one screen</h3><div class="meta"><span class="tag fin">FINAL</span></div></div>
+    <div class="tscroll"><table class="tbl">
+      <tbody>
+        <tr><td class="row-h">Idea</td><td>memory split into variable-size segments that match the program's pieces (main, functions, stack, symbol table)</td></tr>
+        <tr><td class="row-h">Address</td><td>(s, d) → row s of the segment table → d &lt; limit? → base + d, else trap</td></tr>
+        <tr><td class="row-h">Registers</td><td>STBR = where the table is · STLR = number of segments (s &lt; STLR)</td></tr>
+        <tr><td class="row-h">Numbers</td><td>(2, 53) → 4353 · (3, 852) → 4052 · (0, 1222) → trap</td></tr>
+        <tr><td class="row-h">vs paging</td><td>variable vs fixed size · external vs internal fragmentation · visible vs hidden</td></tr>
+        <tr><td class="row-h">Both together</td><td>page each segment (IA-32, MULTICS): logical → segmentation unit → linear → paging unit → physical</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+</section>
+
+<section class="unit" id="u5">
+  <div class="unit-h">
+    <div class="no">Unit 5 · PPT ch13</div>
+    <h2>File system</h2>
+    <p>What a file is (attributes, operations, types, access), how folders are organised (directory types, paths, mounting, sharing), who may use a file (protection), and how files sit on the disk (allocation). Your ch13 slides cover the first half; the rest is marked <span class="cl">FROM CLAUDE</span>.</p>
+    <div class="tags"><span class="tag fin">FINAL</span></div>
+  </div>
+  <div class="mm" role="navigation" aria-label="Unit 5 mind map">
+    <span class="mm-c">Unit 5 · file system</span>
+    <div class="mm-b">
+      <div class="mm-g" style="--b:var(--c1)"><b>A file</b><a href="#u5-attr">Concept + attributes</a><a href="#u5-ops">Operations, open files, locks</a><a href="#u5-types">Types + structure</a><a href="#u5-access">Access methods</a><a class="x" href="#u5-mmap">Memory-mapped files</a></div>
+      <div class="mm-g" style="--b:var(--c2)"><b>Disk + folders</b><a href="#u5-vol">Partitions + volumes</a><a href="#u5-dir">Directory types + operations</a><a href="#u5-path">Path names</a><a class="x" href="#u5-mount">Mounting</a><a class="x" href="#u5-share">Sharing</a></div>
+      <div class="mm-g" style="--b:var(--c4)"><b>Protection</b><a href="#u5-prot">rwx, 761, groups, ACL</a></div>
+      <div class="mm-g" style="--b:var(--c5)"><b>Inside the disk</b><a class="x" href="#u5-layers">File-system layers</a><a class="x" href="#u5-alloc">Contiguous · linked · FAT</a><a class="x" href="#u5-inode">Indexed, inode, free space</a></div>
+    </div>
+  </div>
+
+  <!-- ===================== FILE CONCEPT ===================== -->
+  <article class="card" id="u5-attr">
+    <div class="card-h"><h3><span class="n">5.1</span>File concept and file attributes</h3><div class="meta"><span class="ppt">PPT ch13·s2–5</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>A <b>file</b> is a named, <b>contiguous logical address space</b> on storage (s2): to the user it looks like one unbroken run of bytes, even if the disk scatters it. Files hold <b>data</b> (numeric, character, binary) or <b>programs</b>; the creator decides what the contents mean. Information <b>about</b> a file (its attributes) is kept in the <b>directory structure</b> on the disk (s3, s5).</div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Attribute (s3)</th><th>Meaning</th><th>Example: notes.txt</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Name</td><td>the only information kept in human-readable form</td><td class="mono">notes.txt</td></tr>
+        <tr><td class="row-h">Identifier</td><td>a unique number that identifies the file inside the file system</td><td class="mono">inode 48213</td></tr>
+        <tr><td class="row-h">Type</td><td>needed on systems that support different file types</td><td>text file</td></tr>
+        <tr><td class="row-h">Location</td><td>pointer to where the file is on the device</td><td>block 1290</td></tr>
+        <tr><td class="row-h">Size</td><td>current file size</td><td class="mono">2,048 bytes</td></tr>
+        <tr><td class="row-h">Protection</td><td>who can read, write, execute</td><td class="mono">rw-r--r--</td></tr>
+        <tr><td class="row-h">Time, date, user ID</td><td>for protection, security and usage monitoring</td><td>made 3 Nov by pao</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">s3 also mentions <b>extended attributes</b>, such as a file <b>checksum</b>. s4 shows the Mac "Get Info" window: it lists these same attributes.</p>
+    <div class="tip"><span><b>Memory trick: "NITLS-PT"</b> → Name, Identifier, Type, Location, Size, Protection, Time. <b>Everyday example:</b> a library card for a book: title (name), accession number (identifier), shelf (location), pages (size), "reference only" (protection), date added (time).</span></div>
+  </article>
+
+  <article class="card" id="u5-ops">
+    <div class="card-h"><h3><span class="n">5.2</span>File operations, open-file table and file locks</h3><div class="meta"><span class="ppt">PPT ch13·s6–8</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>Basic operations (s6): <b>create, write, read, reposition (seek), delete, truncate</b>, plus <b>open</b> and <b>close</b>. <b>Open(F)</b> searches the directory on disk and copies F's entry into memory, so later reads and writes don't search again. <b>Close(F)</b> copies the entry back to the directory on disk.</div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Operation (s6)</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Create</td><td>find space on disk, add an entry to the directory</td></tr>
+        <tr><td class="row-h">Write</td><td>write data at the <b>write pointer</b> location</td></tr>
+        <tr><td class="row-h">Read</td><td>read data at the <b>read pointer</b> location</td></tr>
+        <tr><td class="row-h">Reposition (seek)</td><td>move the pointer to a new place in the file (no data moves)</td></tr>
+        <tr><td class="row-h">Delete</td><td>free the file's space and remove its directory entry</td></tr>
+        <tr><td class="row-h">Truncate</td><td>erase the contents but <b>keep</b> the attributes (size becomes 0)</td></tr>
+        <tr><td class="row-h">Open(F) · Close(F)</td><td>copy the directory entry to memory · copy it back to disk</td></tr>
+      </tbody>
+    </table></div>
+    <div class="flow" role="img" aria-label="Life of a file"><span>create</span><i>→</i><span class="a">open</span><i>→</i><span>read / write / seek</span><i>→</i><span class="a">close</span><i>→</i><span class="r">delete</span></div>
+    <h4>Open files (s7): what the OS keeps for each open file</h4>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Piece of data</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Open-file table</td><td>tracks every open file</td></tr>
+        <tr><td class="row-h">File pointer</td><td>last read/write position, <b>one per process</b> that has the file open</td></tr>
+        <tr><td class="row-h">File-open count</td><td>how many processes have it open; when the last one closes it (count = 0), its entry is removed from the table</td></tr>
+        <tr><td class="row-h">Disk location</td><td>cached, so the OS doesn't look it up on every access</td></tr>
+        <tr><td class="row-h">Access rights</td><td>each process's access mode (read only, read-write…)</td></tr>
+      </tbody>
+    </table></div>
+    <h4>File locking (s8)</h4>
+    <div class="grid2">
+      <div class="box"><b>Shared vs exclusive</b><b class="good">Shared lock</b> = like a reader lock: many processes can hold it at once.<br><b class="bad">Exclusive lock</b> = like a writer lock: only one process.</div>
+      <div class="box"><b>Mandatory vs advisory</b><b>Mandatory</b>: the OS refuses access depending on the locks held (Windows).<br><b>Advisory</b>: processes can see the lock status and decide themselves (UNIX).</div>
+    </div>
+    <div class="clx"><span class="cl">FROM CLAUDE · two levels of open-file table (9e §11.1)</span><p class="small">There are really two tables. The <b>per-process table</b> holds what differs per process (file pointer, access rights). It points into one <b>system-wide table</b> that holds what is the same for everyone (disk location, size, open count).</p></div>
+    <div class="tip"><span><b>Everyday example:</b> a shared Google Doc. Many people can <i>view</i> at once (shared lock), but if only one person may <i>edit</i> at a time, that's an exclusive lock.</span></div>
+  </article>
+
+  <article class="card" id="u5-types">
+    <div class="card-h"><h3><span class="n">5.3</span>File types and file structure</h3><div class="meta"><span class="ppt">PPT ch13·s9–10</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>The usual way to show a file's <b>type</b> is an <b>extension</b> after the name: <span class="mono">report.docx</span>, <span class="mono">a.out</span>, <span class="mono">main.c</span> (s9). The <b>structure</b> (s10) is how the bytes inside are organised: <b>none</b> (just a sequence of words or bytes), <b>simple records</b> (lines, fixed-length or variable-length records), or <b>complex</b> (a formatted document, a relocatable load file). The OS or the program decides the structure.</div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>File type (s9 picture)</th><th>Usual extensions</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Executable</td><td class="mono">exe, com, bin, none</td><td>ready-to-run machine-language program</td></tr>
+        <tr><td class="row-h">Object</td><td class="mono">obj, o</td><td>compiled machine language, not linked yet</td></tr>
+        <tr><td class="row-h">Source code</td><td class="mono">c, cc, java, py, asm</td><td>source code in various languages</td></tr>
+        <tr><td class="row-h">Batch</td><td class="mono">bat, sh</td><td>commands to the command interpreter</td></tr>
+        <tr><td class="row-h">Markup</td><td class="mono">xml, html, tex</td><td>textual data, documents</td></tr>
+        <tr><td class="row-h">Word processor</td><td class="mono">docx, rtf</td><td>various word-processor formats</td></tr>
+        <tr><td class="row-h">Library</td><td class="mono">lib, a, so, dll</td><td>libraries of routines for programmers</td></tr>
+        <tr><td class="row-h">Print or view</td><td class="mono">gif, pdf, jpg</td><td>a format for printing or viewing</td></tr>
+        <tr><td class="row-h">Archive</td><td class="mono">zip, rar, tar</td><td>related files grouped (often compressed) into one</td></tr>
+        <tr><td class="row-h">Multimedia</td><td class="mono">mp3, mp4, mov, avi</td><td>audio or video</td></tr>
+      </tbody>
+    </table></div>
+    <div class="flow" role="img" aria-label="File structure from simple to complex"><span>none: bytes / words</span><i>→</i><span class="y">simple records: lines, fixed or variable length</span><i>→</i><span class="a">complex: formatted document, relocatable load file</span></div>
+    <p class="note">s10: the last two can be <b>simulated</b> with the first by putting control characters in the bytes (e.g. a newline ends a "line" record). That is what UNIX and Windows do: to the OS a file is just bytes.</p>
+  </article>
+
+  <article class="card" id="u5-access">
+    <div class="card-h"><h3><span class="n">5.4</span>Access methods: sequential, direct, indexed</h3><div class="meta"><span class="ppt">PPT ch13·s11–15</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>A file is a list of fixed-length <b>logical records</b> (s11). <b>Sequential access</b>: read records in order, one after another (like a cassette tape). <b>Direct access</b>: jump straight to record <i>n</i> (like a song number on a playlist). <b>Indexed access</b> (s14): build an <b>index</b> of keys → record locations, look up the key, then jump.</div>
+    <div class="dscroll" style="--mw:330px"><svg class="dg" viewBox="0 0 400 104" style="max-width:460px" role="img" aria-label="Sequential access: a tape with beginning, end and current position; rewind goes back, read or write moves forward">
+      <rect class="bx" x="20" y="44" width="360" height="30"/>
+      <rect class="bxa" x="20" y="44" width="190" height="30"/>
+      <text class="ts" x="115" y="63" text-anchor="middle">already read</text>
+      <path class="lnr" d="M210 30 V84"/>
+      <text class="tb" x="210" y="98" text-anchor="middle">current position</text>
+      <path class="ln" d="M204 22 H26" marker-end="url(#ah)"/><text class="ts" x="115" y="16" text-anchor="middle">rewind (reset)</text>
+      <path class="lna" d="M216 22 H320" marker-end="url(#aha)"/><text class="ts" x="268" y="16" text-anchor="middle">read or write next</text>
+      <text class="ts" x="20" y="90">beginning</text>
+      <text class="ts" x="380" y="90" text-anchor="end">end</text>
+    </svg></div>
+    <p class="cap">PPT s12 figure: sequential access only moves forward, or back to the start.</p>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th></th><th>Sequential (s12)</th><th>Direct / relative (s13)</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Operations</td><td class="mono">read next · write next · reset</td><td class="mono">read n · write n · position to n · read next · write next · rewrite n</td></tr>
+        <tr><td class="row-h">Rule</td><td>no read after the last write (rewrite)</td><td>n = <b>relative block number</b> (0, 1, 2… from the start of the file)</td></tr>
+        <tr><td class="row-h">Good for</td><td>editors, compilers, reading a whole file</td><td>databases, airline seat booking: jump to the record you need</td></tr>
+        <tr><td class="row-h">Based on</td><td>a tape model</td><td>a disk model (any block can be read)</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">s13: relative block numbers let the <b>OS decide where the file is placed</b> on the disk; the program never sees real disk addresses.</p>
+    <div class="clx"><span class="cl">FROM CLAUDE · direct access numerical + simulating sequential (9e §11.2)</span>
+      <p class="small">Records are fixed length L, numbered from 0. Record n starts at byte <span class="mono">n × L</span>. Example: L = 100 bytes, record 7 → byte <b>700</b>; record 0 → byte 0.</p>
+      <p class="small">Sequential access on a direct-access file: keep a current position <span class="mono">cp</span>. "reset" = <span class="mono">cp = 0</span>; "read next" = <span class="mono">read cp; cp = cp + 1</span>. (The other way round is very slow.)</p>
+    </div>
+    <h4>Other access methods (s14–15): index files</h4>
+    <div class="flow" role="img" aria-label="Indexed access with ISAM"><span class="y">key (e.g. a UPC barcode)</span><i>→</i><span>master index (small, in memory)</span><i>→</i><span>secondary index (on disk)</span><i>→</i><span class="g">data block with the record</span></div>
+    <p class="small">IBM's <b>ISAM</b> (indexed sequential-access method): a small master index points to blocks of a secondary index, which point to the file blocks; the file is kept <b>sorted by key</b>. If an index gets too big, make an index of the index. VMS offers index and relative files (s15).</p>
+    <div class="tip"><span><b>Everyday example:</b> sequential = watching a lecture video from the start; direct = jumping to minute 37; indexed = the video's chapter list ("Deadlock → 37:00") then jumping.</span></div>
+  </article>
+
+  <article class="card claude" id="u5-mmap">
+    <div class="card-h"><h3><span class="n">5.5</span>Memory-mapped files</h3><div class="meta"><span class="cl">FROM CLAUDE · in your syllabus, no slide · 9e §9.7</span><span class="tag fin">FINAL</span><span class="stars">★<span class="o">★★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span><b>Memory mapping</b> a file links its disk blocks to pages in the process's virtual memory. After that, the program reads and writes the file as if it were an <b>array in memory</b>: no <span class="mono">read()</span> / <span class="mono">write()</span> system call for each access. The first touch of a page causes a <b>page fault</b> that loads it (demand paging, 4.14); changes are written back to the disk later, at the latest when the file is closed.</div>
+    <div class="flow" role="img" aria-label="How a memory-mapped file works"><span class="a">mmap(file)</span><i>→</i><span>file blocks ↔ virtual pages</span><i>→</i><span class="y">first touch: page fault, block read in</span><i>→</i><span class="g">later reads/writes = plain memory access</span><i>→</i><span>close: dirty pages written back</span></div>
+    <div class="grid2">
+      <div class="box good"><b>Good</b>faster: no system call per read or write<br>simple code: a file becomes an array<br><b>sharing</b>: two processes can map the same file, which gives them shared memory (Unit 3 IPC)</div>
+      <div class="box bad"><b>Watch out</b>writes may not reach the disk at once: a crash can lose them<br>uses virtual address space (a problem for huge files on 32-bit systems)</div>
+    </div>
+    <p class="note">System calls: <span class="mono">mmap()</span> in UNIX/Linux; <span class="mono">CreateFileMapping()</span> + <span class="mono">MapViewOfFile()</span> in Windows.</p>
+  </article>
+
+  <!-- ===================== DISK + DIRECTORIES ===================== -->
+  <article class="card" id="u5-vol">
+    <div class="card-h"><h3><span class="n">5.6</span>Disk structure: partitions, volumes, file-system types</h3><div class="meta"><span class="ppt">PPT ch13·s16–18</span><span class="tag fin">FINAL</span><span class="stars">★<span class="o">★★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>A disk can be split into <b>partitions</b> (also called minidisks or slices). A partition can be used <b>raw</b> (no file system) or <b>formatted</b> with a file system. Anything that holds a file system is a <b>volume</b>: it may be part of one disk or span several disks. Each volume keeps a <b>device directory</b> (volume table of contents) describing its files (s16).</div>
+    <div class="dscroll" style="--mw:330px"><svg class="dg" viewBox="0 0 400 170" style="max-width:460px" role="img" aria-label="Disk 1 holds two partitions A and B; partition C is one volume spread over disk 2 and disk 3">
+      <rect class="bx" x="10" y="14" width="170" height="124" rx="6"/>
+      <rect class="bxa" x="20" y="24" width="150" height="50" rx="4"/><text class="tb" x="95" y="44" text-anchor="middle">partition A</text><text class="ts" x="95" y="62" text-anchor="middle">directory + files</text>
+      <rect class="bxg" x="20" y="80" width="150" height="50" rx="4"/><text class="tb" x="95" y="100" text-anchor="middle">partition B</text><text class="ts" x="95" y="118" text-anchor="middle">directory + files</text>
+      <text class="tb" x="95" y="156" text-anchor="middle">disk 1</text>
+      <rect class="bxy dash" x="212" y="6" width="182" height="140" rx="8"/>
+      <rect class="bx" x="222" y="30" width="162" height="46" rx="6"/><text class="ts" x="303" y="57" text-anchor="middle">disk 2</text>
+      <rect class="bx" x="222" y="86" width="162" height="46" rx="6"/><text class="ts" x="303" y="113" text-anchor="middle">disk 3</text>
+      <text class="tb" x="303" y="22" text-anchor="middle">partition C (one volume)</text>
+      <text class="ts" x="303" y="162" text-anchor="middle">directory + files spread over 2 disks</text>
+    </svg></div>
+    <p class="cap">PPT s17 "A typical file-system organization": two volumes on one disk, and one volume over two disks.</p>
+    <p class="small">Partitions can also be <b>RAID</b>-protected against disk failure (s16).</p>
+    <h4>Types of file systems (s18): Solaris example</h4>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Name</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h mono">ufs, zfs</td><td>general-purpose file systems (your normal files)</td></tr>
+        <tr><td class="row-h mono">tmpfs</td><td>memory-based, volatile (lost on shutdown): fast temporary I/O</td></tr>
+        <tr><td class="row-h mono">objfs</td><td>interface into kernel memory to get kernel symbols for debugging</td></tr>
+        <tr><td class="row-h mono">ctfs</td><td>contract file system for managing daemons</td></tr>
+        <tr><td class="row-h mono">lofs</td><td>loopback: lets one file system be accessed in place of another</td></tr>
+        <tr><td class="row-h mono">procfs</td><td>kernel interface to process structures (<span class="mono">/proc</span>)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip"><span><b>Everyday example:</b> your laptop's one SSD split into C: and D:. Each is a partition with its own file system, so each is a volume.</span></div>
+  </article>
+
+  <article class="card" id="u5-dir">
+    <div class="card-h"><h3><span class="n">5.7</span>Directory structures: single, two-level, tree, acyclic, general graph</h3><div class="meta"><span class="ppt">PPT ch13·s19–22</span><span class="cl">FROM CLAUDE · single, two-level, acyclic, general graph</span><span class="tag fin">FINAL</span><span class="stars">★★★</span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>A <b>directory</b> is a collection of nodes holding information about all files; both the directory and the files live on the disk (s19). It is organised to get <b>efficiency</b> (find a file fast), <b>naming</b> (two users can use the same name for different files; one file can have several names) and <b>grouping</b> (e.g. all Java programs, all games) (s21). The five structures in your syllabus go from simplest to most flexible: <b>single-level → two-level → tree → acyclic graph → general graph</b>.</div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Directory operations (s20)</th></tr></thead>
+      <tbody><tr><td>search for a file · create a file · delete a file · list a directory · rename a file · traverse the file system</td></tr></tbody>
+    </table></div>
+    <div class="grid2">
+      <div class="box"><b>1. Single-level</b><span class="cl">FROM CLAUDE</span>
+        <svg class="dg" viewBox="0 0 280 96" role="img" aria-label="One directory holding every file">
+          <rect class="bxy" x="10" y="8" width="260" height="26" rx="4"/>
+          <text class="tm" x="36" y="25" text-anchor="middle">cat</text><text class="tm" x="78" y="25" text-anchor="middle">bo</text><text class="tm" x="120" y="25" text-anchor="middle">a</text><text class="tm" x="162" y="25" text-anchor="middle">test</text><text class="tm" x="204" y="25" text-anchor="middle">data</text><text class="tm" x="246" y="25" text-anchor="middle">mail</text>
+          <path class="ln" d="M36 34 V66 M78 34 V66 M120 34 V66 M162 34 V66 M204 34 V66 M246 34 V66"/>
+          <circle class="bx" cx="36" cy="74" r="8"/><circle class="bx" cx="78" cy="74" r="8"/><circle class="bx" cx="120" cy="74" r="8"/><circle class="bx" cx="162" cy="74" r="8"/><circle class="bx" cx="204" cy="74" r="8"/><circle class="bx" cx="246" cy="74" r="8"/>
+        </svg>
+        One directory for <b>everyone</b>. Simple, but every name must be unique and there is no grouping.</div>
+      <div class="box"><b>2. Two-level</b><span class="cl">FROM CLAUDE</span>
+        <svg class="dg" viewBox="0 0 280 96" role="img" aria-label="A master directory with one sub-directory per user">
+          <rect class="bxk" x="10" y="6" width="260" height="24" rx="4"/>
+          <text class="tw" x="45" y="22" text-anchor="middle">user 1</text><text class="tw" x="140" y="22" text-anchor="middle">user 2</text><text class="tw" x="235" y="22" text-anchor="middle">user 3</text>
+          <path class="ln" d="M45 30 V50 M140 30 V50 M235 30 V50"/>
+          <rect class="bxy" x="10" y="50" width="70" height="24" rx="4"/><text class="tm" x="45" y="66" text-anchor="middle">cat a</text>
+          <rect class="bxy" x="105" y="50" width="70" height="24" rx="4"/><text class="tm" x="140" y="66" text-anchor="middle">a data</text>
+          <rect class="bxy" x="200" y="50" width="70" height="24" rx="4"/><text class="tm" x="235" y="66" text-anchor="middle">test x</text>
+          <text class="ts" x="140" y="90" text-anchor="middle">MFD on top · one UFD per user</text>
+        </svg>
+        A <b>master file directory</b> (MFD) with one <b>user file directory</b> (UFD) per user. Users can reuse names ("a" twice), but can't group files or easily share.</div>
+    </div>
+    <div class="grid2">
+      <div class="box"><b>3. Tree (hierarchical)</b><span class="ppt">PPT s22</span><br>Directories inside directories, any depth. Each file has <b>one</b> path from the root. The usual structure (see the tree in <a href="#u5-path">5.8</a>). Users can group files and use a current directory. No sharing: a file sits in exactly one directory.</div>
+      <div class="box"><b>4. Acyclic graph</b><span class="cl">FROM CLAUDE</span>
+        <svg class="dg" viewBox="0 0 280 96" role="img" aria-label="Two directories share one file through a link, with no cycles">
+          <rect class="bxk" x="110" y="4" width="60" height="22" rx="4"/><text class="tw" x="140" y="19" text-anchor="middle">root</text>
+          <path class="ln" d="M125 26 L70 44 M155 26 L210 44"/>
+          <rect class="bxy" x="40" y="44" width="60" height="22" rx="4"/><text class="tm" x="70" y="59" text-anchor="middle">dict</text>
+          <rect class="bxy" x="180" y="44" width="60" height="22" rx="4"/><text class="tm" x="210" y="59" text-anchor="middle">spell</text>
+          <path class="ln" d="M80 66 L128 78"/>
+          <path class="lna dash" d="M200 66 L152 78"/>
+          <rect class="bxa" x="110" y="74" width="60" height="20" rx="4"/><text class="tm" x="140" y="88" text-anchor="middle">count</text>
+          <text class="ts" x="228" y="88" text-anchor="middle">link</text>
+        </svg>
+        A file or folder can be in <b>two directories</b> through a <b>link</b> (shortcut), but there are <b>no cycles</b>. Problems: one file now has several paths; deleting it can leave a <b>dangling link</b> (fix: keep a reference count and delete when it reaches 0).</div>
+    </div>
+    <div class="box"><b>5. General graph</b><span class="cl">FROM CLAUDE</span><br>Links are allowed anywhere, so <b>cycles</b> can form (folder A → B → back to A). Problems: a search can loop forever, and a cycle of folders nobody can reach still has a reference count above 0. Fixes: <b>garbage collection</b> (mark everything reachable, free the rest), or check for a cycle each time a link is added, or allow links only to files.</div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Structure</th><th>Same name for 2 users?</th><th>Grouping</th><th>Sharing</th><th>Main problem</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Single-level</td><td class="bad">no</td><td class="bad">no</td><td>everything is shared</td><td>name clashes</td></tr>
+        <tr><td class="row-h">Two-level</td><td class="good">yes</td><td class="bad">no</td><td class="bad">hard</td><td>users are isolated</td></tr>
+        <tr><td class="row-h">Tree</td><td class="good">yes</td><td class="good">yes</td><td class="bad">no</td><td>one file, one place only</td></tr>
+        <tr><td class="row-h">Acyclic graph</td><td class="good">yes</td><td class="good">yes</td><td class="good">yes, by links</td><td>dangling links on delete</td></tr>
+        <tr><td class="row-h">General graph</td><td class="good">yes</td><td class="good">yes</td><td class="good">yes, any link</td><td>cycles: endless search, garbage</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip"><span><b>How to write it in the exam:</b> one small diagram per structure + 2 lines (what it is, its main problem). The comparison table above is a ready-made 5-mark answer.</span></div>
+  </article>
+
+  <article class="card" id="u5-path">
+    <div class="card-h"><h3><span class="n">5.8</span>Path names and the current directory</h3><div class="meta"><span class="ppt">PPT ch13·s22–23</span><span class="cl">FROM CLAUDE · absolute vs relative, ".."</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>In a tree, a file is named by its <b>path</b>. An <b>absolute path</b> starts at the root (<span class="mono">/spell/mail/prog/list</span>). A <b>relative path</b> starts at the <b>current (working) directory</b> (s23). <span class="mono">..</span> means "the parent directory". Creating and deleting files happens in the current directory.</div>
+    <div class="dscroll" style="--mw:340px"><svg class="dg" viewBox="0 0 420 234" style="max-width:470px" role="img" aria-label="Directory tree: root holds spell, bin and programs; spell holds mail and stat; mail holds prog, copy and exp; prog holds list and obj; bin holds count and find">
+      <path class="ln" d="M210 33 L110 61 M210 33 L260 61 M210 33 L370 61"/>
+      <path class="ln" d="M110 83 L70 111 M110 83 L160 111 M260 83 L240 111 M260 83 L300 111"/>
+      <path class="ln" d="M70 133 L40 161 M70 133 L95 161 M70 133 L145 161"/>
+      <path class="ln" d="M40 183 L24 205 M40 183 L74 205"/>
+      <rect class="bxk" x="185" y="11" width="50" height="22" rx="5"/><text class="tw" x="210" y="26" text-anchor="middle">/</text>
+      <rect class="bxy" x="85" y="61" width="50" height="22" rx="5"/><text class="tm" x="110" y="76" text-anchor="middle">spell</text>
+      <rect class="bxy" x="235" y="61" width="50" height="22" rx="5"/><text class="tm" x="260" y="76" text-anchor="middle">bin</text>
+      <rect class="bxy" x="334" y="61" width="72" height="22" rx="5"/><text class="tm" x="370" y="76" text-anchor="middle">programs</text>
+      <rect class="bxa" x="47" y="111" width="46" height="22" rx="5"/><text class="tm" x="70" y="126" text-anchor="middle">mail</text>
+      <rect class="bx" x="137" y="111" width="46" height="22"/><text class="tm" x="160" y="126" text-anchor="middle">stat</text>
+      <rect class="bx" x="217" y="111" width="46" height="22"/><text class="tm" x="240" y="126" text-anchor="middle">count</text>
+      <rect class="bx" x="277" y="111" width="46" height="22"/><text class="tm" x="300" y="126" text-anchor="middle">find</text>
+      <rect class="bxy" x="17" y="161" width="46" height="22" rx="5"/><text class="tm" x="40" y="176" text-anchor="middle">prog</text>
+      <rect class="bx" x="72" y="161" width="46" height="22"/><text class="tm" x="95" y="176" text-anchor="middle">copy</text>
+      <rect class="bx" x="122" y="161" width="46" height="22"/><text class="tm" x="145" y="176" text-anchor="middle">exp</text>
+      <rect class="bx" x="2" y="205" width="44" height="22"/><text class="tm" x="24" y="220" text-anchor="middle">list</text>
+      <rect class="bx" x="52" y="205" width="44" height="22"/><text class="tm" x="74" y="220" text-anchor="middle">obj</text>
+      <text class="ts" x="160" y="152">← current directory: /spell/mail</text>
+      <rect class="bxy" x="250" y="170" width="16" height="12" rx="3"/><text class="ts" x="272" y="180">directory</text>
+      <rect class="bx" x="250" y="192" width="16" height="12"/><text class="ts" x="272" y="202">file</text>
+    </svg></div>
+    <p class="cap">Based on the PPT s22 tree. Blue = the current directory used below.</p>
+    <div class="tscroll"><table class="tbl calc">
+      <thead><tr><th>From /spell/mail, you type</th><th>Kind</th><th>Means</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">prog/list</td><td>relative</td><td class="mono">/spell/mail/prog/list</td></tr>
+        <tr><td class="mono">copy</td><td>relative</td><td class="mono">/spell/mail/copy</td></tr>
+        <tr><td class="mono">../stat</td><td>relative (up 1)</td><td class="mono">/spell/stat</td></tr>
+        <tr><td class="mono">../../bin</td><td>relative (up 2)</td><td class="mono">/bin</td></tr>
+        <tr><td class="mono">/bin/count</td><td>absolute</td><td class="mono">/bin/count (same from anywhere)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="grid2">
+      <div class="box"><b>PPT s23 commands</b><span class="mono">cd /spell/mail/prog</span> → current directory is now prog, so <span class="mono">type list</span> works with a short name.<br>In <span class="mono">/mail</span>, <span class="mono">mkdir count</span> creates the new directory <span class="mono">/mail/count</span>.</div>
+      <div class="box bad"><b>Deleting a directory (s23)</b>Deleting "mail" deletes the <b>entire subtree</b> rooted at mail (prog, copy, exp, list, obj). Some systems refuse to delete a directory that isn't empty.</div>
+    </div>
+    <div class="tip"><span><b>Everyday example:</b> an absolute path is a full postal address; a relative path is "two doors down from here". <span class="mono">..</span> = "go back out one door".</span></div>
+  </article>
+
+  <article class="card claude" id="u5-mount">
+    <div class="card-h"><h3><span class="n">5.9</span>File-system mounting</h3><div class="meta"><span class="cl">FROM CLAUDE · in your syllabus, no slide · 10e §15.3</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>A file system must be <b>mounted</b> before its files can be used. The OS is given the device and a <b>mount point</b>: an (usually empty) directory where the new file system is attached. The OS checks the device holds a valid file system, then records it in its <b>mount table</b>. From then on, going into the mount point shows the new file system's files.</div>
+    <div class="dscroll" style="--mw:340px"><svg class="dg" viewBox="0 0 420 168" style="max-width:470px" role="img" aria-label="Before: root holds bin and an empty users folder, and a USB volume holds sue and jane. After mounting the USB volume on users, users holds sue and jane">
+      <text class="tb" x="100" y="14" text-anchor="middle">Before</text>
+      <path class="ln" d="M100 42 L55 62 M100 42 L145 62"/>
+      <rect class="bxk" x="75" y="22" width="50" height="20" rx="5"/><text class="tw" x="100" y="36" text-anchor="middle">/</text>
+      <rect class="bxy" x="30" y="62" width="50" height="20" rx="5"/><text class="tm" x="55" y="76" text-anchor="middle">bin</text>
+      <rect class="bxy dash" x="115" y="62" width="60" height="20" rx="5"/><text class="tm" x="145" y="76" text-anchor="middle">users</text>
+      <text class="ts" x="145" y="96" text-anchor="middle">empty mount point</text>
+      <path class="ln" d="M100 132 L65 150 M100 132 L135 150"/>
+      <rect class="bxa" x="60" y="112" width="80" height="20" rx="5"/><text class="tm" x="100" y="126" text-anchor="middle">USB root</text>
+      <rect class="bx" x="40" y="148" width="50" height="18"/><text class="tm" x="65" y="161" text-anchor="middle">sue</text>
+      <rect class="bx" x="110" y="148" width="50" height="18"/><text class="tm" x="135" y="161" text-anchor="middle">jane</text>
+      <path class="lna" d="M212 90 H246" marker-end="url(#aha)"/>
+      <text class="ts" x="229" y="80" text-anchor="middle">mount</text>
+      <text class="tb" x="330" y="14" text-anchor="middle">After</text>
+      <path class="ln" d="M330 42 L285 62 M330 42 L375 62 M375 82 L340 112 M375 82 L405 112"/>
+      <rect class="bxk" x="305" y="22" width="50" height="20" rx="5"/><text class="tw" x="330" y="36" text-anchor="middle">/</text>
+      <rect class="bxy" x="260" y="62" width="50" height="20" rx="5"/><text class="tm" x="285" y="76" text-anchor="middle">bin</text>
+      <rect class="bxa" x="345" y="62" width="60" height="20" rx="5"/><text class="tm" x="375" y="76" text-anchor="middle">users</text>
+      <rect class="bx" x="315" y="112" width="50" height="18"/><text class="tm" x="340" y="125" text-anchor="middle">sue</text>
+      <rect class="bx" x="380" y="112" width="38" height="18"/><text class="tm" x="399" y="125" text-anchor="middle">jane</text>
+      <text class="ts" x="365" y="150" text-anchor="middle">/users/sue now reaches the USB</text>
+    </svg></div>
+    <p class="cap">Mounting the USB volume at /users. Anything that was inside /users before is hidden until the USB is unmounted.</p>
+    <div class="flow" role="img" aria-label="Mount steps"><span>device + mount point given</span><i>→</i><span class="y">check: valid file system?</span><i>→</i><span>add to the mount table</span><i>→</i><span class="g">files visible under the mount point</span></div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th></th><th>UNIX / Linux</th><th>Windows</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Where it appears</td><td>any directory: <span class="mono">mount /dev/sdb1 /users</span></td><td>a drive letter (<span class="mono">F:</span>), or a folder on NTFS</td></tr>
+        <tr><td class="row-h">When</td><td>at boot (from <span class="mono">/etc/fstab</span>) or by command</td><td>automatically when a device is found</td></tr>
+        <tr><td class="row-h">Remove</td><td><span class="mono">umount /users</span></td><td>"Eject" / safely remove</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip"><span><b>Everyday example:</b> plugging a pen drive into a laptop. It shows up as F: (Windows) or under <span class="mono">/media</span> (Linux): that is mounting. "Safely remove" is unmounting.</span></div>
+  </article>
+
+  <article class="card claude" id="u5-share">
+    <div class="card-h"><h3><span class="n">5.10</span>File sharing</h3><div class="meta"><span class="cl">FROM CLAUDE · in your syllabus, no slide · 9e §11.5</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>Sharing lets several users use the same file. On <b>one computer</b> the OS keeps an <b>owner ID</b> and a <b>group ID</b> for each file and checks them on every access. Across a <b>network</b>, <b>remote file systems</b> (NFS, CIFS) let a client mount a server's directories. <b>Consistency semantics</b> decide when one user sees another user's writes.</div>
+    <div class="grid2">
+      <div class="box"><b>Multiple users (one machine)</b><b>Owner</b> = can change attributes and grant access.<br><b>Group</b> = a set of users who get the same rights.<br>Each file stores both IDs; the process's IDs are compared on access (see 5.11).</div>
+      <div class="box"><b>Remote file systems</b><b>Client–server</b>: the server exports directories, clients mount them (NFS for UNIX, CIFS/SMB for Windows).<br><b>Distributed info</b>: DNS, LDAP, Active Directory say who is who.<br><b>Failure</b>: if the server or network goes down, the client must wait or report an error.</div>
+    </div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Consistency semantics</th><th>When do others see my write?</th><th>Used by</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">UNIX semantics</td><td><b>immediately</b>; users can even share the file pointer</td><td>UNIX file systems</td></tr>
+        <tr><td class="row-h">Session semantics</td><td>only <b>after I close</b> the file; sessions opened later see it</td><td>Andrew File System (AFS)</td></tr>
+        <tr><td class="row-h">Immutable shared files</td><td>a shared file can't be changed at all (read only)</td><td>simple, safe sharing</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip"><span><b>Everyday example:</b> a shared drive in the college lab is a remote file system. Google Docs live typing = UNIX semantics; a Word file on the drive that others see only after you save and close = session semantics.</span></div>
+  </article>
+
+  <!-- ===================== PROTECTION ===================== -->
+  <article class="card" id="u5-prot">
+    <div class="card-h"><h3><span class="n">5.11</span>Protection: access types, rwx, groups, ACLs</h3><div class="meta"><span class="ppt">PPT ch13·s24–27</span><span class="cl">FROM CLAUDE · chmod, ls -l reading</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>The file owner should control <b>what</b> can be done and <b>by whom</b> (s24). Types of access: <b>read, write, execute, append, delete, list</b>. UNIX gives three classes of users, <b>owner, group, public</b>, three bits each (<b>r w x</b>), written as one octal digit per class: <b>761</b> = owner rwx, group rw-, public --x (s25). Windows uses an <b>access-control list</b> (ACL): a list of users and their rights for each file (s27).</div>
+    <div class="tscroll"><table class="tbl calc mono">
+      <thead><tr><th>PPT s25</th><th>Digit</th><th>r w x bits</th><th>Means</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">owner</td><td>7</td><td>1 1 1</td><td>rwx: read, write, execute</td></tr>
+        <tr><td class="row-h">group</td><td>6</td><td>1 1 0</td><td>rw-: read, write</td></tr>
+        <tr><td class="row-h">public</td><td>1</td><td>0 0 1</td><td>--x: execute only</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box acc"><b>Digit ↔ letters in 3 seconds</b>r = 4 · w = 2 · x = 1 · add them. 7 = 4+2+1 = rwx · 6 = 4+2 = rw- · 5 = 4+1 = r-x · 4 = r-- · 0 = ---.</div>
+    <h4>Groups (s25)</h4>
+    <ol class="nsteps">
+      <li>Ask the manager (admin) to create a group with a unique name, say <b>G</b>, and add some users to it.</li>
+      <li>For a file (say <b>game</b>) or a subdirectory, define the access you want.</li>
+      <li>Attach the group to the file: <span class="mono">chgrp G game</span></li>
+    </ol>
+    <div class="clx"><span class="cl">FROM CLAUDE · setting and reading the bits</span>
+      <p class="small"><span class="mono">chmod 761 game</span> sets the bits. <span class="mono">ls -l</span> (PPT s26 shows a listing) prints them:</p>
+      <pre class="code">-rwxrw---x  1 pao  G  3200 Nov 3 game
+<span class="cm">↑ - = file, d = directory
+ rwx = owner · rw- = group · --x = public</span></pre>
+    </div>
+    <div class="grid2">
+      <div class="box"><b>UNIX bits</b><span class="good">✓</span> tiny: 9 bits per file<br><span class="bad">✗</span> only 3 classes: can't say "everyone in G except Raj"</div>
+      <div class="box"><b>ACL (Windows, s27)</b><span class="good">✓</span> any user, any right, per file<br><span class="bad">✗</span> long lists to store and check</div>
+    </div>
+    <div class="ex"><div class="ex-h">Quick practice</div>
+      <p>Write as letters: <span class="mono">754</span>, <span class="mono">640</span>. Write as digits: <span class="mono">rwxr-x---</span>, <span class="mono">rw-r--r--</span>.</p>
+      <details class="ans"><summary>Answers <span class="r">answer</span></summary><div class="in"><p class="mono">754 = rwx r-x r-- · 640 = rw- r-- --- · rwxr-x--- = 750 · rw-r--r-- = 644</p></div></details>
+    </div>
+  </article>
+
+  <!-- ===================== IMPLEMENTATION ===================== -->
+  <article class="card claude" id="u5-layers">
+    <div class="card-h"><h3><span class="n">5.12</span>File-system layers (how a read travels down)</h3><div class="meta"><span class="cl">FROM CLAUDE · 10e §14.1</span><span class="tag fin">FINAL</span><span class="stars">★<span class="o">★★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>A file system is built in <b>layers</b>; each layer uses only the one below it. A request like "read record 4 of notes.txt" becomes "read logical block 9", then "read physical block 1290", then commands to the disk controller.</div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Layer (top → bottom)</th><th>Job</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Application programs</td><td>call <span class="mono">open()</span>, <span class="mono">read()</span></td></tr>
+        <tr><td class="row-h">Logical file system</td><td>metadata: directories, protection, the <b>file control block</b> (FCB = inode in UNIX)</td></tr>
+        <tr><td class="row-h">File-organization module</td><td>logical block → physical block; manages <b>free space</b></td></tr>
+        <tr><td class="row-h">Basic file system</td><td>"read block 1290": generic commands, buffers and caches</td></tr>
+        <tr><td class="row-h">I/O control</td><td>device drivers + interrupt handlers talk to the controller</td></tr>
+        <tr><td class="row-h">Devices</td><td>the disk itself</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small"><b>FCB holds:</b> permissions · dates (create, access, write) · owner, group, ACL · size · pointers to the data blocks.</p>
+  </article>
+
+  <article class="card claude" id="u5-alloc">
+    <div class="card-h"><h3><span class="n">5.13</span>Allocation methods: contiguous, linked, FAT</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §12.4 (syllabus: file organization)</span><span class="tag fin">FINAL</span><span class="stars">★★★</span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>How does the OS place a file's blocks on the disk? <b>Contiguous</b>: in one unbroken run. <b>Linked</b>: anywhere, each block holds the number of the next one. <b>FAT</b>: linked, but all the "next" numbers sit in one table at the start of the disk. <b>Indexed</b> (5.14): one index block lists all the file's blocks.</div>
+    <h4>Contiguous allocation</h4>
+    <div class="dscroll" style="--mw:310px"><svg class="dg" viewBox="0 0 368 140" style="max-width:440px" role="img" aria-label="Disk blocks 0 to 31 with five files each stored in a run of neighbouring blocks"><rect class="bxa" x="8" y="8" width="44" height="30"/><text class="ts" x="11" y="19">0</text><text class="tm" x="34" y="31" text-anchor="middle">count</text><rect class="bxa" x="52" y="8" width="44" height="30"/><text class="ts" x="55" y="19">1</text><text class="tm" x="78" y="31" text-anchor="middle">count</text><rect class="bx" x="96" y="8" width="44" height="30"/><text class="ts" x="99" y="19">2</text><rect class="bx" x="140" y="8" width="44" height="30"/><text class="ts" x="143" y="19">3</text><rect class="bx" x="184" y="8" width="44" height="30"/><text class="ts" x="187" y="19">4</text><rect class="bx" x="228" y="8" width="44" height="30"/><text class="ts" x="231" y="19">5</text><rect class="bxg" x="272" y="8" width="44" height="30"/><text class="ts" x="275" y="19">6</text><text class="tm" x="298" y="31" text-anchor="middle">f</text><rect class="bxg" x="316" y="8" width="44" height="30"/><text class="ts" x="319" y="19">7</text><text class="tm" x="342" y="31" text-anchor="middle">f</text><rect class="bx" x="8" y="38" width="44" height="30"/><text class="ts" x="11" y="49">8</text><rect class="bx" x="52" y="38" width="44" height="30"/><text class="ts" x="55" y="49">9</text><rect class="bx" x="96" y="38" width="44" height="30"/><text class="ts" x="99" y="49">10</text><rect class="bx" x="140" y="38" width="44" height="30"/><text class="ts" x="143" y="49">11</text><rect class="bx" x="184" y="38" width="44" height="30"/><text class="ts" x="187" y="49">12</text><rect class="bx" x="228" y="38" width="44" height="30"/><text class="ts" x="231" y="49">13</text><rect class="bxy" x="272" y="38" width="44" height="30"/><text class="ts" x="275" y="49">14</text><text class="tm" x="298" y="61" text-anchor="middle">tr</text><rect class="bxy" x="316" y="38" width="44" height="30"/><text class="ts" x="319" y="49">15</text><text class="tm" x="342" y="61" text-anchor="middle">tr</text><rect class="bxy" x="8" y="68" width="44" height="30"/><text class="ts" x="11" y="79">16</text><text class="tm" x="34" y="91" text-anchor="middle">tr</text><rect class="bx" x="52" y="68" width="44" height="30"/><text class="ts" x="55" y="79">17</text><rect class="bx" x="96" y="68" width="44" height="30"/><text class="ts" x="99" y="79">18</text><rect class="bxc" x="140" y="68" width="44" height="30"/><text class="ts" x="143" y="79">19</text><text class="tm" x="166" y="91" text-anchor="middle">mail</text><rect class="bxc" x="184" y="68" width="44" height="30"/><text class="ts" x="187" y="79">20</text><text class="tm" x="210" y="91" text-anchor="middle">mail</text><rect class="bxc" x="228" y="68" width="44" height="30"/><text class="ts" x="231" y="79">21</text><text class="tm" x="254" y="91" text-anchor="middle">mail</text><rect class="bxc" x="272" y="68" width="44" height="30"/><text class="ts" x="275" y="79">22</text><text class="tm" x="298" y="91" text-anchor="middle">mail</text><rect class="bxc" x="316" y="68" width="44" height="30"/><text class="ts" x="319" y="79">23</text><text class="tm" x="342" y="91" text-anchor="middle">mail</text><rect class="bxc" x="8" y="98" width="44" height="30"/><text class="ts" x="11" y="109">24</text><text class="tm" x="34" y="121" text-anchor="middle">mail</text><rect class="bx" x="52" y="98" width="44" height="30"/><text class="ts" x="55" y="109">25</text><rect class="bx" x="96" y="98" width="44" height="30"/><text class="ts" x="99" y="109">26</text><rect class="bx" x="140" y="98" width="44" height="30"/><text class="ts" x="143" y="109">27</text><rect class="bxr" x="184" y="98" width="44" height="30"/><text class="ts" x="187" y="109">28</text><text class="tm" x="210" y="121" text-anchor="middle">list</text><rect class="bxr" x="228" y="98" width="44" height="30"/><text class="ts" x="231" y="109">29</text><text class="tm" x="254" y="121" text-anchor="middle">list</text><rect class="bxr" x="272" y="98" width="44" height="30"/><text class="ts" x="275" y="109">30</text><text class="tm" x="298" y="121" text-anchor="middle">list</text><rect class="bxr" x="316" y="98" width="44" height="30"/><text class="ts" x="319" y="109">31</text><text class="tm" x="342" y="121" text-anchor="middle">list</text></svg></div>
+    <div class="tscroll"><table class="tbl calc mono">
+      <thead><tr><th>File</th><th>Start</th><th>Length</th></tr></thead>
+      <tbody><tr><td>count</td><td>0</td><td>2</td></tr><tr><td>f</td><td>6</td><td>2</td></tr><tr><td>tr</td><td>14</td><td>3</td></tr><tr><td>mail</td><td>19</td><td>6</td></tr><tr><td>list</td><td>28</td><td>4</td></tr></tbody>
+    </table></div>
+    <p class="cap">Directory needs only (start, length). Block i of "mail" = 19 + i.</p>
+    <h4>Linked allocation</h4>
+    <div class="dscroll" style="--mw:310px"><svg class="dg" viewBox="0 0 368 140" style="max-width:440px" role="img" aria-label="Disk blocks 0 to 31; file jeep uses blocks 9, 16, 1, 10, 25, each holding the number of the next block"><rect class="bx" x="8" y="8" width="44" height="30"/><text class="ts" x="11" y="19">0</text><rect class="bxa" x="52" y="8" width="44" height="30"/><text class="ts" x="55" y="19">1</text><text class="tm" x="78" y="31" text-anchor="middle">→10</text><rect class="bx" x="96" y="8" width="44" height="30"/><text class="ts" x="99" y="19">2</text><rect class="bx" x="140" y="8" width="44" height="30"/><text class="ts" x="143" y="19">3</text><rect class="bx" x="184" y="8" width="44" height="30"/><text class="ts" x="187" y="19">4</text><rect class="bx" x="228" y="8" width="44" height="30"/><text class="ts" x="231" y="19">5</text><rect class="bx" x="272" y="8" width="44" height="30"/><text class="ts" x="275" y="19">6</text><rect class="bx" x="316" y="8" width="44" height="30"/><text class="ts" x="319" y="19">7</text><rect class="bx" x="8" y="38" width="44" height="30"/><text class="ts" x="11" y="49">8</text><rect class="bxa" x="52" y="38" width="44" height="30"/><text class="ts" x="55" y="49">9</text><text class="tm" x="78" y="61" text-anchor="middle">→16</text><rect class="bxa" x="96" y="38" width="44" height="30"/><text class="ts" x="99" y="49">10</text><text class="tm" x="122" y="61" text-anchor="middle">→25</text><rect class="bx" x="140" y="38" width="44" height="30"/><text class="ts" x="143" y="49">11</text><rect class="bx" x="184" y="38" width="44" height="30"/><text class="ts" x="187" y="49">12</text><rect class="bx" x="228" y="38" width="44" height="30"/><text class="ts" x="231" y="49">13</text><rect class="bx" x="272" y="38" width="44" height="30"/><text class="ts" x="275" y="49">14</text><rect class="bx" x="316" y="38" width="44" height="30"/><text class="ts" x="319" y="49">15</text><rect class="bxa" x="8" y="68" width="44" height="30"/><text class="ts" x="11" y="79">16</text><text class="tm" x="34" y="91" text-anchor="middle">→1</text><rect class="bx" x="52" y="68" width="44" height="30"/><text class="ts" x="55" y="79">17</text><rect class="bx" x="96" y="68" width="44" height="30"/><text class="ts" x="99" y="79">18</text><rect class="bx" x="140" y="68" width="44" height="30"/><text class="ts" x="143" y="79">19</text><rect class="bx" x="184" y="68" width="44" height="30"/><text class="ts" x="187" y="79">20</text><rect class="bx" x="228" y="68" width="44" height="30"/><text class="ts" x="231" y="79">21</text><rect class="bx" x="272" y="68" width="44" height="30"/><text class="ts" x="275" y="79">22</text><rect class="bx" x="316" y="68" width="44" height="30"/><text class="ts" x="319" y="79">23</text><rect class="bx" x="8" y="98" width="44" height="30"/><text class="ts" x="11" y="109">24</text><rect class="bxa" x="52" y="98" width="44" height="30"/><text class="ts" x="55" y="109">25</text><text class="tm" x="78" y="121" text-anchor="middle">end</text><rect class="bx" x="96" y="98" width="44" height="30"/><text class="ts" x="99" y="109">26</text><rect class="bx" x="140" y="98" width="44" height="30"/><text class="ts" x="143" y="109">27</text><rect class="bx" x="184" y="98" width="44" height="30"/><text class="ts" x="187" y="109">28</text><rect class="bx" x="228" y="98" width="44" height="30"/><text class="ts" x="231" y="109">29</text><rect class="bx" x="272" y="98" width="44" height="30"/><text class="ts" x="275" y="109">30</text><rect class="bx" x="316" y="98" width="44" height="30"/><text class="ts" x="319" y="109">31</text></svg></div>
+    <p class="cap">File "jeep": directory says start 9, end 25. Chain 9 → 16 → 1 → 10 → 25. To reach the 4th block you must read 9, 16 and 1 first.</p>
+    <h4>FAT (file-allocation table): the chain moved into one table</h4>
+    <div class="grid2">
+      <div class="tscroll"><table class="tbl calc mono">
+        <thead><tr><th>FAT entry (block)</th><th>Next block</th></tr></thead>
+        <tbody><tr><td>1</td><td>10</td></tr><tr><td>9 ← start</td><td>16</td></tr><tr><td>10</td><td>25</td></tr><tr><td>16</td><td>1</td></tr><tr><td>25</td><td>end of file</td></tr><tr><td>free blocks</td><td>0</td></tr></tbody>
+      </table></div>
+      <p class="small">One entry per disk block, at the start of the volume (used by MS-DOS and pen drives). Following the chain means reading the <b>table</b> (often cached in RAM), not every data block, so random access is much faster than plain linked.</p>
+    </div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th></th><th>Contiguous</th><th>Linked</th><th>Indexed (5.14)</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Directory stores</td><td>start + length</td><td>start (+ end)</td><td>index block number</td></tr>
+        <tr><td class="row-h">Sequential access</td><td class="good">fast</td><td class="good">fine</td><td class="good">fine</td></tr>
+        <tr><td class="row-h">Direct access</td><td class="good">fast: start + i</td><td class="bad">slow: follow i pointers</td><td class="good">fast: look up entry i</td></tr>
+        <tr><td class="row-h">External fragmentation</td><td class="bad">yes (needs compaction)</td><td class="good">none</td><td class="good">none</td></tr>
+        <tr><td class="row-h">File can grow?</td><td class="bad">hard: next block may be taken</td><td class="good">easily</td><td class="good">easily (until the index is full)</td></tr>
+        <tr><td class="row-h">Extra space</td><td>none</td><td>a pointer in every block</td><td>a whole index block per file</td></tr>
+        <tr><td class="row-h">Risk</td><td>—</td><td class="bad">one broken pointer loses the rest of the file</td><td>losing the index block</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip"><span><b>Everyday example:</b> contiguous = a family booking 5 seats in one row at the cinema. Linked = a treasure hunt: each clue tells you where the next is. FAT = all the clues written on one board at the entrance. Indexed = one card listing all 5 seat numbers.</span></div>
+  </article>
+
+  <article class="card claude" id="u5-inode">
+    <div class="card-h"><h3><span class="n">5.14</span>Indexed allocation, the UNIX inode, free-space management</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §12.4–12.5</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span><b>Indexed allocation</b> puts all of a file's block numbers into one <b>index block</b>; entry i = the i-th block of the file. File "jeep" → index block 19 holds <span class="mono">9 16 1 10 25 −1 −1 −1</span> (−1 = unused). Big files need more: UNIX's <b>inode</b> mixes <b>12 direct</b> pointers with <b>single, double and triple indirect</b> pointers.</div>
+    <div class="dscroll" style="--mw:340px"><svg class="dg" viewBox="0 0 420 240" style="max-width:470px" role="img" aria-label="UNIX inode: 12 direct pointers go straight to data blocks; single indirect goes through one index block; double through two; triple through three">
+      <text class="tb" x="75" y="12" text-anchor="middle">inode</text>
+      <rect class="bx" x="10" y="18" width="130" height="20"/><text class="ts" x="75" y="32" text-anchor="middle">mode (rwx)</text>
+      <rect class="bx" x="10" y="38" width="130" height="20"/><text class="ts" x="75" y="52" text-anchor="middle">owners</text>
+      <rect class="bx" x="10" y="58" width="130" height="20"/><text class="ts" x="75" y="72" text-anchor="middle">timestamps</text>
+      <rect class="bx" x="10" y="78" width="130" height="20"/><text class="ts" x="75" y="92" text-anchor="middle">size · block count</text>
+      <rect class="bxa" x="10" y="98" width="130" height="52"/><text x="75" y="128" text-anchor="middle">12 direct</text>
+      <rect class="bxy" x="10" y="150" width="130" height="26"/><text class="ts" x="75" y="167" text-anchor="middle">single indirect</text>
+      <rect class="bxy" x="10" y="176" width="130" height="26"/><text class="ts" x="75" y="193" text-anchor="middle">double indirect</text>
+      <rect class="bxy" x="10" y="202" width="130" height="26"/><text class="ts" x="75" y="219" text-anchor="middle">triple indirect</text>
+      <text class="ts" x="205" y="12" text-anchor="middle">index blocks</text>
+      <text class="ts" x="392" y="12" text-anchor="middle">data</text>
+      <path class="lna" d="M140 124 H364" marker-end="url(#aha)"/>
+      <rect class="bxg" x="368" y="112" width="48" height="24"/><text class="ts" x="392" y="128" text-anchor="middle">data</text>
+      <path class="ln" d="M140 163 H170" marker-end="url(#ah)"/>
+      <rect class="bxy" x="172" y="154" width="44" height="18"/>
+      <path class="ln" d="M216 163 H364" marker-end="url(#ah)"/>
+      <rect class="bxg" x="368" y="153" width="48" height="20"/><text class="ts" x="392" y="167" text-anchor="middle">data</text>
+      <path class="ln" d="M140 189 H170" marker-end="url(#ah)"/>
+      <rect class="bxy" x="172" y="180" width="44" height="18"/>
+      <path class="ln" d="M216 189 H240" marker-end="url(#ah)"/>
+      <rect class="bxy" x="242" y="180" width="44" height="18"/>
+      <path class="ln" d="M286 189 H364" marker-end="url(#ah)"/>
+      <rect class="bxg" x="368" y="179" width="48" height="20"/><text class="ts" x="392" y="193" text-anchor="middle">data</text>
+      <path class="ln" d="M140 215 H170" marker-end="url(#ah)"/>
+      <rect class="bxy" x="172" y="206" width="44" height="18"/>
+      <path class="ln" d="M216 215 H240" marker-end="url(#ah)"/>
+      <rect class="bxy" x="242" y="206" width="44" height="18"/>
+      <path class="ln" d="M286 215 H310" marker-end="url(#ah)"/>
+      <rect class="bxy" x="312" y="206" width="44" height="18"/>
+      <path class="ln" d="M356 215 H364" marker-end="url(#ah)"/>
+      <rect class="bxg" x="368" y="205" width="48" height="20"/><text class="ts" x="392" y="219" text-anchor="middle">data</text>
+    </svg></div>
+    <div class="ex"><div class="ex-h">Numerical · biggest file an inode can reach</div>
+      <p>Blocks are <b>4 KB</b>, a block pointer is <b>4 B</b>. So one index block holds 4096 ÷ 4 = <b>1024 pointers</b>.</p>
+      <div class="tscroll"><table class="tbl calc">
+        <thead><tr><th>Part</th><th>Blocks reached</th><th>Data</th></tr></thead>
+        <tbody>
+          <tr><td class="row-h">12 direct</td><td class="mono">12</td><td class="mono">12 × 4 KB = 48 KB</td></tr>
+          <tr><td class="row-h">single indirect</td><td class="mono">1024</td><td class="mono">1024 × 4 KB = 4 MB</td></tr>
+          <tr><td class="row-h">double indirect</td><td class="mono">1024² ≈ 1 M</td><td class="mono">1 M × 4 KB = 4 GB</td></tr>
+          <tr><td class="row-h">triple indirect</td><td class="mono">1024³ ≈ 1 G</td><td class="mono">1 G × 4 KB = 4 TB</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td></td><td class="mono">≈ 4 TB + 4 GB + 4 MB + 48 KB</td></tr></tfoot>
+      </table></div>
+      <p class="note">Small files (≤ 48 KB) need no index block at all: fast. Only big files pay for the extra lookups.</p>
+    </div>
+    <h4>Free-space management: which blocks are free?</h4>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Method</th><th>How</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Bit vector (bitmap)</td><td>1 bit per block: <b>1 = free</b>, 0 = used</td><td>easy to find runs of free blocks; the map can be big</td></tr>
+        <tr><td class="row-h">Linked list</td><td>each free block points to the next free block</td><td>no wasted space, but slow to walk</td></tr>
+        <tr><td class="row-h">Grouping</td><td>the first free block stores the numbers of n free blocks</td><td>finds many free blocks at once</td></tr>
+        <tr><td class="row-h">Counting</td><td>store (first free block, how many follow it)</td><td>short when free blocks come in runs</td></tr>
+      </tbody>
+    </table></div>
+    <div class="ex"><div class="ex-h">Bit vector example (9e)</div>
+      <p>Free blocks: 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 17, 18, 25, 26, 27. Bitmap from block 0:</p>
+      <p class="mono" style="overflow-wrap:anywhere">00111100111111000110000001110000…</p>
+      <p class="small"><b>Size of a bitmap:</b> 1 TB disk with 4 KB blocks → 2<sup>40</sup> ÷ 2<sup>12</sup> = 2<sup>28</sup> blocks → 2<sup>28</sup> bits = <b>32 MB</b> of bitmap.</p>
+    </div>
+  </article>
+
+  <article class="card" id="u5-sum">
+    <div class="card-h"><h3><span class="n">✓</span>Unit 5 on one screen (last-minute review)</h3><div class="meta"><span class="tag fin">FINAL</span></div></div>
+    <div class="tscroll"><table class="tbl">
+      <tbody>
+        <tr><td class="row-h">File</td><td>named contiguous logical address space; data or program (s2)</td></tr>
+        <tr><td class="row-h">Attributes</td><td>name, identifier, type, location, size, protection, time/date/user (NITLS-PT)</td></tr>
+        <tr><td class="row-h">Operations</td><td>create, write, read, seek, delete, truncate, open, close · open-file table: pointer, open count, location, rights</td></tr>
+        <tr><td class="row-h">Locks</td><td>shared (reader) vs exclusive (writer) · mandatory vs advisory</td></tr>
+        <tr><td class="row-h">Structure</td><td>none (bytes) · simple records (lines, fixed, variable) · complex</td></tr>
+        <tr><td class="row-h">Access</td><td>sequential (read next, reset) · direct (read n, n = relative block) · indexed (ISAM: master → secondary index)</td></tr>
+        <tr><td class="row-h">Memory-mapped</td><td>file blocks mapped to virtual pages; access = memory access; easy sharing</td></tr>
+        <tr><td class="row-h">Volumes</td><td>partition (minidisk, slice) · raw or formatted · volume = anything with a file system</td></tr>
+        <tr><td class="row-h">Directories</td><td>single → two-level (MFD + UFD) → tree → acyclic graph (links, dangling) → general graph (cycles, garbage collection)</td></tr>
+        <tr><td class="row-h">Paths</td><td>absolute from / · relative from the current directory · .. = parent · from /spell/mail: ../stat = /spell/stat</td></tr>
+        <tr><td class="row-h">Mounting</td><td>attach a file system at a mount point (empty directory); mount table; Windows = drive letters</td></tr>
+        <tr><td class="row-h">Sharing</td><td>owner + group IDs · NFS / CIFS · UNIX vs session vs immutable semantics</td></tr>
+        <tr><td class="row-h">Protection</td><td>r w x for owner, group, public · 761 = rwx rw- --x · chgrp G game · ACLs</td></tr>
+        <tr><td class="row-h">Allocation</td><td>contiguous (fast, external frag.) · linked (no direct access) · FAT · indexed (index block)</td></tr>
+        <tr><td class="row-h">inode</td><td>12 direct + single + double + triple · 4 KB / 4 B → 48 KB, 4 MB, 4 GB, 4 TB</td></tr>
+        <tr><td class="row-h">Free space</td><td>bitmap (1 = free) · linked list · grouping · counting</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+</section>
+
+<section class="unit" id="u6">
+  <div class="unit-h">
+    <div class="no">Unit 6 · no PPT yet</div>
+    <h2>Mass storage: the hard disk</h2>
+    <p>What is inside a hard disk, how long one read takes, how big a disk is, how disks are connected, and in which order the disk arm serves requests (FCFS, SSTF, SCAN, C-SCAN, plus LOOK and C-LOOK). Your folder has no Unit 6 slides, so <b>this whole unit is <span class="cl">FROM CLAUDE</span></b>, written from the textbook (10e ch11, 9e ch10). Check it against the slides once your teacher shares them.</p>
+    <div class="tags"><span class="tag fin">FINAL</span></div>
+  </div>
+  <div class="mm" role="navigation" aria-label="Unit 6 mind map">
+    <span class="mm-c">Unit 6 · disk</span>
+    <div class="mm-b">
+      <div class="mm-g" style="--b:var(--c1)"><b>The disk</b><a class="x" href="#u6-struct">Platters, tracks, sectors</a><a class="x" href="#u6-time">Access time</a><a class="x" href="#u6-cap">Capacity</a><a class="x" href="#u6-attach">Attachment</a></div>
+      <div class="mm-g" style="--b:var(--c2)"><b>Disk scheduling</b><a class="x" href="#u6-fcfs">FCFS + SSTF</a><a class="x" href="#u6-scan">SCAN + C-SCAN</a><a class="x" href="#u6-look">LOOK, C-LOOK, compare</a></div>
+      <div class="mm-g" style="--b:var(--c5)"><b>Practise</b><a href="#lab-disk">Disk calculator</a><a href="#bprac">Practice questions</a><a href="#u6-sum">Summary</a></div>
+    </div>
+  </div>
+
+  <article class="card claude" id="u6-struct">
+    <div class="card-h"><h3><span class="n">6.1</span>Disk structure: platters, tracks, sectors, cylinders</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §10.1–10.2</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>A hard disk is a stack of spinning <b>platters</b>. Each surface is split into rings called <b>tracks</b>, and each track into <b>sectors</b> (usually 512 B or 4 KB): the smallest piece the disk reads or writes. One <b>read-write head</b> per surface sits on a <b>disk arm</b>; all heads move together. The tracks under all the heads at one arm position form a <b>cylinder</b>. To the OS, the disk is just a long list of <b>logical blocks</b> (0, 1, 2…) mapped onto sectors.</div>
+    <div class="dscroll" style="--mw:340px"><svg class="dg" viewBox="0 0 420 230" style="max-width:480px" role="img" aria-label="Side view: three platters on a spindle, an arm with one head per surface; top view: a platter with tracks, a sector and the head">
+      <text class="tb" x="110" y="14" text-anchor="middle">Side view</text>
+      <rect class="bxk" x="104" y="26" width="12" height="150"/>
+      <text class="ts" x="110" y="192" text-anchor="middle">spindle (spins)</text>
+      <rect class="bxc" x="20" y="46" width="180" height="10" rx="4"/>
+      <rect class="bxc" x="20" y="96" width="180" height="10" rx="4"/>
+      <rect class="bxc" x="20" y="146" width="180" height="10" rx="4"/>
+      <text class="ts" x="20" y="40">platter</text>
+      <path class="lnr" d="M236 36 V166"/>
+      <path class="lnr" d="M236 41 H170 M236 61 H170 M236 91 H170 M236 111 H170 M236 141 H170 M236 161 H170"/>
+      <rect class="bxr" x="160" y="38" width="12" height="6"/><rect class="bxr" x="160" y="58" width="12" height="6"/>
+      <rect class="bxr" x="160" y="88" width="12" height="6"/><rect class="bxr" x="160" y="108" width="12" height="6"/>
+      <rect class="bxr" x="160" y="138" width="12" height="6"/><rect class="bxr" x="160" y="158" width="12" height="6"/>
+      <text class="ts" x="242" y="104">arm</text>
+      <text class="ts" x="180" y="212" text-anchor="middle">6 surfaces → 6 heads, moving together</text>
+      <text class="tb" x="340" y="14" text-anchor="middle">Top view</text>
+      <circle class="bx" cx="340" cy="100" r="70"/>
+      <circle class="bx" cx="340" cy="100" r="54"/>
+      <circle class="bxy" cx="340" cy="100" r="38"/>
+      <circle class="bx" cx="340" cy="100" r="22"/>
+      <circle class="bxk" cx="340" cy="100" r="6"/>
+      <path class="bxa" d="M340 100 L340 30 A70 70 0 0 1 389.5 50.5 Z" style="fill-opacity:.55"/>
+      <text class="ts" x="360" y="24">sector</text>
+      <text class="ts" x="340" y="186" text-anchor="middle">yellow ring = one track</text>
+      <text class="ts" x="340" y="200" text-anchor="middle">same track on every surface</text>
+      <text class="ts" x="340" y="214" text-anchor="middle">= one cylinder</text>
+    </svg></div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Word</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Platter</td><td>a round magnetic plate; data on both surfaces; all spin together (5,400–15,000 RPM)</td></tr>
+        <tr><td class="row-h">Track</td><td>one ring on one surface</td></tr>
+        <tr><td class="row-h">Sector</td><td>a slice of a track; the smallest unit of transfer</td></tr>
+        <tr><td class="row-h">Cylinder</td><td>the set of tracks at one arm position (one per surface)</td></tr>
+        <tr><td class="row-h">Head · arm</td><td>one head per surface, on one arm; the arm moves all heads at once</td></tr>
+        <tr><td class="row-h">Logical block</td><td>what the OS sees: block 0 = first sector of the outermost cylinder, then along the track, then the other tracks of that cylinder, then the next cylinder inwards</td></tr>
+        <tr><td class="row-h">Head crash</td><td>the head touches the platter surface: the disk is destroyed</td></tr>
+      </tbody>
+    </table></div>
+    <h4>Getting a disk ready (formatting)</h4>
+    <div class="flow" role="img" aria-label="Disk formatting steps"><span>low-level format: write sectors (header, data, ECC)</span><i>→</i><span class="y">partition into cylinder groups</span><i>→</i><span class="g">logical format: make a file system</span><i>→</i><span class="a">boot block holds the bootstrap loader</span></div>
+    <p class="small"><b>ECC</b> (error-correcting code) in each sector lets the controller spot and fix small errors. Bad sectors are swapped for spare ones (<b>sector sparing</b>).</p>
+    <div class="tip"><span><b>Everyday example:</b> a stack of vinyl records on one spindle with a record-player arm for each side. A track = one groove ring; a cylinder = the same ring on all the records.</span></div>
+  </article>
+
+  <article class="card claude" id="u6-time">
+    <div class="card-h"><h3><span class="n">6.2</span>Disk access time = seek + rotational latency + transfer</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §10.1</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>To read one sector the disk must: move the arm to the right cylinder (<b>seek time</b>), wait for the sector to spin under the head (<b>rotational latency</b>), then read it (<b>transfer time</b>). Average latency = <b>half a turn</b> = ½ × 60 ÷ RPM seconds. Seek time is the biggest part, which is why disk scheduling tries to <b>cut head movement</b>.</div>
+    <div class="flow" role="img" aria-label="Access time parts"><span class="r">seek: move the arm</span><i>+</i><span class="y">latency: wait for the spin</span><i>+</i><span class="g">transfer: read the bits</span><i>+</i><span>controller overhead</span></div>
+    <div class="box acc"><b>Formulas</b><span class="mono">one turn = 60 ÷ RPM s · average latency = ½ turn · transfer = size ÷ transfer rate · access time = seek + latency + transfer (+ overhead)</span></div>
+    <div class="tscroll"><table class="tbl calc mono">
+      <thead><tr><th>RPM</th><th>One turn</th><th>Average latency (½ turn)</th></tr></thead>
+      <tbody>
+        <tr><td>5400</td><td>11.11 ms</td><td>5.56 ms</td></tr>
+        <tr><td>7200</td><td>8.33 ms</td><td class="y">4.17 ms</td></tr>
+        <tr><td>10000</td><td>6 ms</td><td>3 ms</td></tr>
+        <tr><td>15000</td><td>4 ms</td><td>2 ms</td></tr>
+      </tbody>
+    </table></div>
+    <div class="ex"><div class="ex-h">Worked example (9e) · read a 4 KB block</div>
+      <p>7200 RPM disk, 5 ms average seek, 1 Gb/s transfer rate, 0.1 ms controller overhead.</p>
+      <div class="tscroll"><table class="tbl calc">
+        <tbody>
+          <tr><td class="row-h">Seek</td><td class="mono">5 ms</td></tr>
+          <tr><td class="row-h">Latency</td><td class="mono">½ × 60 000 ÷ 7200 = 4.17 ms</td></tr>
+          <tr><td class="row-h">Overhead</td><td class="mono">0.1 ms</td></tr>
+          <tr><td class="row-h">Transfer</td><td class="mono">4 KB ÷ 1 Gb/s = 32 768 bits ÷ 10⁹ ≈ 0.031 ms</td></tr>
+        </tbody>
+        <tfoot><tr><td>Access time</td><td class="mono">5 + 4.17 + 0.1 + 0.031 = 9.301 ms</td></tr></tfoot>
+      </table></div>
+      <p class="note">The transfer is tiny: almost all the time is moving and waiting. That is why the order of requests matters so much.</p>
+    </div>
+    <div class="tip"><span><b>Everyday example:</b> getting a book from a library: walk to the right shelf (seek), wait for the rotating rack to bring the book round (latency), take it out (transfer).</span></div>
+  </article>
+
+  <article class="card claude" id="u6-cap">
+    <div class="card-h"><h3><span class="n">6.3</span>Storage capacity numericals</h3><div class="meta"><span class="cl">FROM CLAUDE · syllabus "storage capacity"</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>Multiply the four numbers: <b>capacity = surfaces × tracks per surface × sectors per track × bytes per sector</b>. Watch for "platters": a double-sided platter has <b>2 surfaces</b>. One <b>cylinder</b> = surfaces × sectors per track × bytes per sector.</div>
+    <div class="ex"><div class="ex-h">Worked example</div>
+      <p>16 surfaces, 1024 tracks per surface, 64 sectors per track, 512 B per sector.</p>
+      <div class="tscroll"><table class="tbl calc mono">
+        <tbody>
+          <tr><td class="row-h">One track</td><td>64 × 512 B = 32 KB</td></tr>
+          <tr><td class="row-h">One surface</td><td>1024 × 32 KB = 32 MB</td></tr>
+          <tr><td class="row-h">One cylinder</td><td>16 × 32 KB = 512 KB</td></tr>
+        </tbody>
+        <tfoot><tr><td>Disk</td><td>16 × 1024 × 64 × 512 = 2⁴ × 2¹⁰ × 2⁶ × 2⁹ = 2²⁹ B = 512 MB</td></tr></tfoot>
+      </table></div>
+    </div>
+    <div class="tip"><span><b>Trick:</b> turn every number into a power of 2 and add the powers: 2¹⁰ = 1 KB, 2²⁰ = 1 MB, 2³⁰ = 1 GB, 2⁴⁰ = 1 TB.</span></div>
+  </article>
+
+  <article class="card claude" id="u6-attach">
+    <div class="card-h"><h3><span class="n">6.4</span>Disk attachment: host-attached, NAS, SAN</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §10.3</span><span class="tag fin">FINAL</span><span class="stars">★<span class="o">★★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>A computer reaches its storage in three ways. <b>Host-attached</b>: through its own I/O ports and a cable (SATA, SCSI, USB, Fibre Channel). <b>NAS</b> (network-attached storage): a storage box on the normal network (LAN), used through a file protocol like NFS or CIFS. <b>SAN</b> (storage-area network): a separate, private, fast network just for storage, shared by many servers.</div>
+    <div class="dscroll" style="--mw:340px"><svg class="dg" viewBox="0 0 420 150" style="max-width:480px" role="img" aria-label="Host-attached: one computer with a cable to its disk. NAS: clients and a storage box on the same LAN. SAN: servers on the LAN plus a separate storage network to storage arrays">
+      <text class="tb" x="60" y="14" text-anchor="middle">Host-attached</text>
+      <rect class="bxa" x="25" y="26" width="70" height="28" rx="4"/><text class="ts" x="60" y="44" text-anchor="middle">computer</text>
+      <path class="ln" d="M60 54 V92"/><text class="ts" x="66" y="76">SATA / USB</text>
+      <rect class="bxy" x="30" y="92" width="60" height="26" rx="4"/><text class="ts" x="60" y="109" text-anchor="middle">disk</text>
+      <text class="tb" x="200" y="14" text-anchor="middle">NAS</text>
+      <rect class="bxa" x="140" y="26" width="52" height="26" rx="4"/><text class="ts" x="166" y="43" text-anchor="middle">client</text>
+      <rect class="bxa" x="210" y="26" width="52" height="26" rx="4"/><text class="ts" x="236" y="43" text-anchor="middle">client</text>
+      <path class="lnr" d="M140 72 H262"/><text class="ts" x="200" y="68" text-anchor="middle">LAN</text>
+      <path class="ln" d="M166 52 V72 M236 52 V72 M200 72 V92"/>
+      <rect class="bxy" x="165" y="92" width="70" height="26" rx="4"/><text class="ts" x="200" y="109" text-anchor="middle">NAS box</text>
+      <text class="ts" x="200" y="134" text-anchor="middle">NFS / CIFS over LAN</text>
+      <text class="tb" x="350" y="14" text-anchor="middle">SAN</text>
+      <rect class="bxa" x="292" y="26" width="52" height="26" rx="4"/><text class="ts" x="318" y="43" text-anchor="middle">server</text>
+      <rect class="bxa" x="358" y="26" width="52" height="26" rx="4"/><text class="ts" x="384" y="43" text-anchor="middle">server</text>
+      <path class="lng" d="M290 72 H412"/><text class="ts" x="350" y="68" text-anchor="middle">storage net</text>
+      <path class="ln" d="M318 52 V72 M384 52 V72 M318 72 V92 M384 72 V92"/>
+      <rect class="bxy" x="292" y="92" width="52" height="26" rx="4"/><text class="ts" x="318" y="109" text-anchor="middle">array</text>
+      <rect class="bxy" x="358" y="92" width="52" height="26" rx="4"/><text class="ts" x="384" y="109" text-anchor="middle">array</text>
+      <text class="ts" x="350" y="134" text-anchor="middle">Fibre Channel, private</text>
+    </svg></div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th></th><th>Host-attached</th><th>NAS</th><th>SAN</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">Connected by</td><td>local I/O bus / cable</td><td>the ordinary LAN (TCP/IP)</td><td>its own storage network</td></tr>
+        <tr><td class="row-h">Protocol</td><td>SATA, SCSI, USB, FC</td><td>NFS, CIFS (file level); iSCSI</td><td>Fibre Channel (block level)</td></tr>
+        <tr><td class="row-h">Shared?</td><td>no, one computer</td><td>yes, by every client on the LAN</td><td>yes, by many servers</td></tr>
+        <tr><td class="row-h">Good</td><td>simple, cheap, fast</td><td>easy file sharing</td><td>fast, flexible, no LAN traffic</td></tr>
+        <tr><td class="row-h">Bad</td><td>no sharing</td><td>uses LAN bandwidth, slower</td><td>costly, complex</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip"><span><b>Everyday example:</b> host-attached = a pen drive in your laptop; NAS = the college lab's shared drive on Wi-Fi; SAN = the private storage network inside a data centre (e.g. behind a bank's servers).</span></div>
+  </article>
+
+  <article class="card claude" id="u6-fcfs">
+    <div class="card-h"><h3><span class="n">6.5</span>Disk scheduling 1: FCFS and SSTF</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §10.4 (same example as the book)</span><span class="tag fin">FINAL</span><span class="stars">★★★</span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span>Many processes ask for disk blocks at once, so requests wait in a queue of <b>cylinder numbers</b>. Disk scheduling picks the order, to keep <b>total head movement</b> (sum of all the jumps, in cylinders) small. <b>FCFS</b>: serve in arrival order. <b>SSTF</b> (shortest seek time first): always go to the <b>nearest</b> waiting request.</div>
+    <div class="box acc"><b>Book example used in all of 6.5–6.7</b><span class="mono">Queue: 98, 183, 37, 122, 14, 124, 65, 67 · head at 53 · cylinders 0–199</span></div>
+    <div class="ex"><div class="ex-h">FCFS · first come, first served</div><div class="solve"><div class="solve-h">FCFS</div><p class="order mono">53 → 98 → 183 → 37 → 122 → 14 → 124 → 65 → 67</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 244" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="238"/><line class="tk" x1="55.266331658291456" y1="21" x2="55.266331658291456" y2="238"/><line class="tk" x1="103.34673366834171" y1="21" x2="103.34673366834171" y2="238"/><line class="tk" x1="136.79396984924622" y1="21" x2="136.79396984924622" y2="238"/><line class="tk" x1="161.87939698492463" y1="21" x2="161.87939698492463" y2="238"/><line class="tk" x1="166.0603015075377" y1="21" x2="166.0603015075377" y2="238"/><line class="tk" x1="230.8643216080402" y1="21" x2="230.8643216080402" y2="238"/><line class="tk" x1="281.035175879397" y1="21" x2="281.035175879397" y2="238"/><line class="tk" x1="285.21608040201005" y1="21" x2="285.21608040201005" y2="238"/><line class="tk" x1="408.55276381909545" y1="21" x2="408.55276381909545" y2="238"/><line class="tk" x1="442" y1="21" x2="442" y2="238"/><text class="tl" x="26" y="18">0</text><text class="tl" x="55.266331658291456" y="18">14</text><text class="tl" x="103.34673366834171" y="18">37</text><text class="tl" x="136.79396984924622" y="18">53</text><text class="tl" x="161.87939698492463" y="18">65</text><text class="tl" x="230.8643216080402" y="18">98</text><text class="tl" x="281.035175879397" y="18">122</text><text class="tl" x="408.55276381909545" y="18">183</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="136.79396984924622" y1="34" x2="230.8643216080402" y2="58"/><line class="mv" x1="230.8643216080402" y1="58" x2="408.55276381909545" y2="82"/><line class="mv" x1="408.55276381909545" y1="82" x2="103.34673366834171" y2="106"/><line class="mv" x1="103.34673366834171" y1="106" x2="281.035175879397" y2="130"/><line class="mv" x1="281.035175879397" y1="130" x2="55.266331658291456" y2="154"/><line class="mv" x1="55.266331658291456" y1="154" x2="285.21608040201005" y2="178"/><line class="mv" x1="285.21608040201005" y1="178" x2="161.87939698492463" y2="202"/><line class="mv" x1="161.87939698492463" y1="202" x2="166.0603015075377" y2="226"/><circle class="pt head" cx="136.79396984924622" cy="34" r="5"/><circle class="pt" cx="230.8643216080402" cy="58" r="4"/><circle class="pt" cx="408.55276381909545" cy="82" r="4"/><circle class="pt" cx="103.34673366834171" cy="106" r="4"/><circle class="pt" cx="281.035175879397" cy="130" r="4"/><circle class="pt" cx="55.266331658291456" cy="154" r="4"/><circle class="pt" cx="285.21608040201005" cy="178" r="4"/><circle class="pt" cx="161.87939698492463" cy="202" r="4"/><circle class="pt" cx="166.0603015075377" cy="226" r="4"/></svg></div><p class="note mono">45 + 85 + 146 + 85 + 108 + 110 + 59 + 2 = <b>640</b></p><div class="avg"><span>Total head movement <b>640</b> cylinders</span></div></div></div>
+    <div class="grid2">
+      <div class="box good"><b>FCFS good</b>fair: everyone in order, no starvation · simple</div>
+      <div class="box bad"><b>FCFS bad</b>wild swings (122 → 14 → 124): the most head movement</div>
+    </div>
+    <div class="ex"><div class="ex-h">SSTF · nearest request next</div><div class="solve"><div class="solve-h">SSTF</div><p class="order mono">53 → 65 → 67 → 37 → 14 → 98 → 122 → 124 → 183</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 244" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="238"/><line class="tk" x1="55.266331658291456" y1="21" x2="55.266331658291456" y2="238"/><line class="tk" x1="103.34673366834171" y1="21" x2="103.34673366834171" y2="238"/><line class="tk" x1="136.79396984924622" y1="21" x2="136.79396984924622" y2="238"/><line class="tk" x1="161.87939698492463" y1="21" x2="161.87939698492463" y2="238"/><line class="tk" x1="166.0603015075377" y1="21" x2="166.0603015075377" y2="238"/><line class="tk" x1="230.8643216080402" y1="21" x2="230.8643216080402" y2="238"/><line class="tk" x1="281.035175879397" y1="21" x2="281.035175879397" y2="238"/><line class="tk" x1="285.21608040201005" y1="21" x2="285.21608040201005" y2="238"/><line class="tk" x1="408.55276381909545" y1="21" x2="408.55276381909545" y2="238"/><line class="tk" x1="442" y1="21" x2="442" y2="238"/><text class="tl" x="26" y="18">0</text><text class="tl" x="55.266331658291456" y="18">14</text><text class="tl" x="103.34673366834171" y="18">37</text><text class="tl" x="136.79396984924622" y="18">53</text><text class="tl" x="161.87939698492463" y="18">65</text><text class="tl" x="230.8643216080402" y="18">98</text><text class="tl" x="281.035175879397" y="18">122</text><text class="tl" x="408.55276381909545" y="18">183</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="136.79396984924622" y1="34" x2="161.87939698492463" y2="58"/><line class="mv" x1="161.87939698492463" y1="58" x2="166.0603015075377" y2="82"/><line class="mv" x1="166.0603015075377" y1="82" x2="103.34673366834171" y2="106"/><line class="mv" x1="103.34673366834171" y1="106" x2="55.266331658291456" y2="130"/><line class="mv" x1="55.266331658291456" y1="130" x2="230.8643216080402" y2="154"/><line class="mv" x1="230.8643216080402" y1="154" x2="281.035175879397" y2="178"/><line class="mv" x1="281.035175879397" y1="178" x2="285.21608040201005" y2="202"/><line class="mv" x1="285.21608040201005" y1="202" x2="408.55276381909545" y2="226"/><circle class="pt head" cx="136.79396984924622" cy="34" r="5"/><circle class="pt" cx="161.87939698492463" cy="58" r="4"/><circle class="pt" cx="166.0603015075377" cy="82" r="4"/><circle class="pt" cx="103.34673366834171" cy="106" r="4"/><circle class="pt" cx="55.266331658291456" cy="130" r="4"/><circle class="pt" cx="230.8643216080402" cy="154" r="4"/><circle class="pt" cx="281.035175879397" cy="178" r="4"/><circle class="pt" cx="285.21608040201005" cy="202" r="4"/><circle class="pt" cx="408.55276381909545" cy="226" r="4"/></svg></div><p class="note mono">12 + 2 + 30 + 23 + 84 + 24 + 2 + 59 = <b>236</b></p><div class="avg"><span>Total head movement <b>236</b> cylinders</span></div></div></div>
+    <p class="small"><b>How to pick:</b> from 53 the gaps are 65 (12) and 37 (16) → 65. From 65: 67 (2). From 67: 37 (30) vs 98 (31) → 37. Then 14, then 98, 122, 124, 183. A tie? Most teachers say: keep going in the same direction (say which rule you used).</p>
+    <div class="grid2">
+      <div class="box good"><b>SSTF good</b>far less movement than FCFS (236 vs 640)</div>
+      <div class="box bad"><b>SSTF bad</b><b>starvation</b>: a far request can wait forever if near ones keep arriving · not optimal (here 208 is possible)</div>
+    </div>
+    <div class="tip"><span><b>Like CPU scheduling:</b> FCFS ↔ FCFS; SSTF ↔ SJF (shortest job first). Same strengths, same weakness (starvation).</span></div>
+  </article>
+
+  <article class="card claude" id="u6-scan">
+    <div class="card-h"><h3><span class="n">6.6</span>Disk scheduling 2: SCAN (elevator) and C-SCAN</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §10.4</span><span class="tag fin">FINAL</span><span class="stars">★★★</span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span><b>SCAN</b> (the <b>elevator algorithm</b>): the arm moves one way to the <b>end of the disk</b> (0 or 199), serving requests on the way, then turns and serves the rest. <b>C-SCAN</b> (circular SCAN): goes one way to the end, then <b>jumps straight back</b> to the other end <b>without serving</b> anything, and carries on in the same direction. C-SCAN gives a more even wait.</div>
+    <div class="ex"><div class="ex-h">SCAN · head moving towards 0 first</div><div class="solve"><div class="solve-h">SCAN · moving down (towards 0)</div><p class="order mono">53 → 37 → 14 → 0 → 65 → 67 → 98 → 122 → 124 → 183</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 268" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="262"/><line class="tk" x1="55.266331658291456" y1="21" x2="55.266331658291456" y2="262"/><line class="tk" x1="103.34673366834171" y1="21" x2="103.34673366834171" y2="262"/><line class="tk" x1="136.79396984924622" y1="21" x2="136.79396984924622" y2="262"/><line class="tk" x1="161.87939698492463" y1="21" x2="161.87939698492463" y2="262"/><line class="tk" x1="166.0603015075377" y1="21" x2="166.0603015075377" y2="262"/><line class="tk" x1="230.8643216080402" y1="21" x2="230.8643216080402" y2="262"/><line class="tk" x1="281.035175879397" y1="21" x2="281.035175879397" y2="262"/><line class="tk" x1="285.21608040201005" y1="21" x2="285.21608040201005" y2="262"/><line class="tk" x1="408.55276381909545" y1="21" x2="408.55276381909545" y2="262"/><line class="tk" x1="442" y1="21" x2="442" y2="262"/><text class="tl" x="26" y="18">0</text><text class="tl" x="55.266331658291456" y="18">14</text><text class="tl" x="103.34673366834171" y="18">37</text><text class="tl" x="136.79396984924622" y="18">53</text><text class="tl" x="161.87939698492463" y="18">65</text><text class="tl" x="230.8643216080402" y="18">98</text><text class="tl" x="281.035175879397" y="18">122</text><text class="tl" x="408.55276381909545" y="18">183</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="136.79396984924622" y1="34" x2="103.34673366834171" y2="58"/><line class="mv" x1="103.34673366834171" y1="58" x2="55.266331658291456" y2="82"/><line class="mv" x1="55.266331658291456" y1="82" x2="26" y2="106"/><line class="mv" x1="26" y1="106" x2="161.87939698492463" y2="130"/><line class="mv" x1="161.87939698492463" y1="130" x2="166.0603015075377" y2="154"/><line class="mv" x1="166.0603015075377" y1="154" x2="230.8643216080402" y2="178"/><line class="mv" x1="230.8643216080402" y1="178" x2="281.035175879397" y2="202"/><line class="mv" x1="281.035175879397" y1="202" x2="285.21608040201005" y2="226"/><line class="mv" x1="285.21608040201005" y1="226" x2="408.55276381909545" y2="250"/><circle class="pt head" cx="136.79396984924622" cy="34" r="5"/><circle class="pt" cx="103.34673366834171" cy="58" r="4"/><circle class="pt" cx="55.266331658291456" cy="82" r="4"/><circle class="pt end" cx="26" cy="106" r="4"/><circle class="pt" cx="161.87939698492463" cy="130" r="4"/><circle class="pt" cx="166.0603015075377" cy="154" r="4"/><circle class="pt" cx="230.8643216080402" cy="178" r="4"/><circle class="pt" cx="281.035175879397" cy="202" r="4"/><circle class="pt" cx="285.21608040201005" cy="226" r="4"/><circle class="pt" cx="408.55276381909545" cy="250" r="4"/></svg></div><p class="note mono">16 + 23 + 14 + 65 + 2 + 31 + 24 + 2 + 59 = <b>236</b></p><div class="avg"><span>Total head movement <b>236</b> cylinders</span></div></div></div>
+    <p class="small"><b>Short cut:</b> going down from 53 to 0 then up to 183 → 53 + 183 = <b>236</b>.</p>
+    <div class="ex"><div class="ex-h">C-SCAN · head moving up first</div><div class="solve"><div class="solve-h">C-SCAN · moving up (towards 199)</div><p class="order mono">53 → 65 → 67 → 98 → 122 → 124 → 183 → 199 → 0 → 14 → 37</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 292" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="286"/><line class="tk" x1="55.266331658291456" y1="21" x2="55.266331658291456" y2="286"/><line class="tk" x1="103.34673366834171" y1="21" x2="103.34673366834171" y2="286"/><line class="tk" x1="136.79396984924622" y1="21" x2="136.79396984924622" y2="286"/><line class="tk" x1="161.87939698492463" y1="21" x2="161.87939698492463" y2="286"/><line class="tk" x1="166.0603015075377" y1="21" x2="166.0603015075377" y2="286"/><line class="tk" x1="230.8643216080402" y1="21" x2="230.8643216080402" y2="286"/><line class="tk" x1="281.035175879397" y1="21" x2="281.035175879397" y2="286"/><line class="tk" x1="285.21608040201005" y1="21" x2="285.21608040201005" y2="286"/><line class="tk" x1="408.55276381909545" y1="21" x2="408.55276381909545" y2="286"/><line class="tk" x1="442" y1="21" x2="442" y2="286"/><text class="tl" x="26" y="18">0</text><text class="tl" x="55.266331658291456" y="18">14</text><text class="tl" x="103.34673366834171" y="18">37</text><text class="tl" x="136.79396984924622" y="18">53</text><text class="tl" x="161.87939698492463" y="18">65</text><text class="tl" x="230.8643216080402" y="18">98</text><text class="tl" x="281.035175879397" y="18">122</text><text class="tl" x="408.55276381909545" y="18">183</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="136.79396984924622" y1="34" x2="161.87939698492463" y2="58"/><line class="mv" x1="161.87939698492463" y1="58" x2="166.0603015075377" y2="82"/><line class="mv" x1="166.0603015075377" y1="82" x2="230.8643216080402" y2="106"/><line class="mv" x1="230.8643216080402" y1="106" x2="281.035175879397" y2="130"/><line class="mv" x1="281.035175879397" y1="130" x2="285.21608040201005" y2="154"/><line class="mv" x1="285.21608040201005" y1="154" x2="408.55276381909545" y2="178"/><line class="mv" x1="408.55276381909545" y1="178" x2="442" y2="202"/><line class="mv jmp" x1="442" y1="202" x2="26" y2="226"/><line class="mv" x1="26" y1="226" x2="55.266331658291456" y2="250"/><line class="mv" x1="55.266331658291456" y1="250" x2="103.34673366834171" y2="274"/><circle class="pt head" cx="136.79396984924622" cy="34" r="5"/><circle class="pt" cx="161.87939698492463" cy="58" r="4"/><circle class="pt" cx="166.0603015075377" cy="82" r="4"/><circle class="pt" cx="230.8643216080402" cy="106" r="4"/><circle class="pt" cx="281.035175879397" cy="130" r="4"/><circle class="pt" cx="285.21608040201005" cy="154" r="4"/><circle class="pt" cx="408.55276381909545" cy="178" r="4"/><circle class="pt end" cx="442" cy="202" r="4"/><circle class="pt end" cx="26" cy="226" r="4"/><circle class="pt" cx="55.266331658291456" cy="250" r="4"/><circle class="pt" cx="103.34673366834171" cy="274" r="4"/></svg></div><p class="note mono">12 + 2 + 31 + 24 + 2 + 59 + 16 + <u title="jump back">199</u> + 14 + 23 = <b>382</b></p><div class="avg"><span>Total head movement <b>382</b> cylinders</span><span>Without the jump back: <b>183</b></span></div></div></div>
+    <p class="small"><b>Short cut:</b> 53 → 199 (146) + jump 199 → 0 (199) + 0 → 37 (37) = <b>382</b>; without counting the jump, 146 + 37 = <b>183</b>.</p>
+    <div class="warn"><span><b>Ask or state your rule:</b> some teachers count the jump back in C-SCAN (382) and some don't (183). Write both lines, like the chart above, and say which one you counted.</span></div>
+    <div class="grid2">
+      <div class="box good"><b>SCAN</b>no starvation; good under heavy load<br><span class="bad">✗</span> requests just behind the head wait for a full round trip; goes to the end even with nothing there</div>
+      <div class="box good"><b>C-SCAN</b>more uniform waiting time (treats the cylinders as a circle)<br><span class="bad">✗</span> the return trip is wasted movement</div>
+    </div>
+    <div class="tip"><span><b>Everyday example:</b> SCAN = a lift that goes to the top floor, then all the way down. C-SCAN = a lift that only picks people up going <i>up</i>, then drops empty to the ground floor and starts again.</span></div>
+  </article>
+
+  <article class="card claude" id="u6-look">
+    <div class="card-h"><h3><span class="n">6.7</span>LOOK, C-LOOK and which one to choose</h3><div class="meta"><span class="cl">FROM CLAUDE · 9e §10.4</span><span class="tag fin">FINAL</span><span class="stars">★★<span class="o">★</span></span></div></div>
+    <div class="must"><span class="lbl">30-second answer</span><b>LOOK</b> = SCAN, but the arm turns at the <b>last request</b> instead of going to the end of the disk. <b>C-LOOK</b> = C-SCAN, but it goes only as far as the last request, then jumps back to the <b>lowest request</b> (not to 0). Your syllabus names FCFS, SSTF, SCAN and C-SCAN; LOOK and C-LOOK are the common extra.</div>
+    <div class="ex"><div class="ex-h">LOOK · moving towards 0 first</div><div class="solve"><div class="solve-h">LOOK · moving down (towards 0)</div><p class="order mono">53 → 37 → 14 → 65 → 67 → 98 → 122 → 124 → 183</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 244" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="238"/><line class="tk" x1="55.266331658291456" y1="21" x2="55.266331658291456" y2="238"/><line class="tk" x1="103.34673366834171" y1="21" x2="103.34673366834171" y2="238"/><line class="tk" x1="136.79396984924622" y1="21" x2="136.79396984924622" y2="238"/><line class="tk" x1="161.87939698492463" y1="21" x2="161.87939698492463" y2="238"/><line class="tk" x1="166.0603015075377" y1="21" x2="166.0603015075377" y2="238"/><line class="tk" x1="230.8643216080402" y1="21" x2="230.8643216080402" y2="238"/><line class="tk" x1="281.035175879397" y1="21" x2="281.035175879397" y2="238"/><line class="tk" x1="285.21608040201005" y1="21" x2="285.21608040201005" y2="238"/><line class="tk" x1="408.55276381909545" y1="21" x2="408.55276381909545" y2="238"/><line class="tk" x1="442" y1="21" x2="442" y2="238"/><text class="tl" x="26" y="18">0</text><text class="tl" x="55.266331658291456" y="18">14</text><text class="tl" x="103.34673366834171" y="18">37</text><text class="tl" x="136.79396984924622" y="18">53</text><text class="tl" x="161.87939698492463" y="18">65</text><text class="tl" x="230.8643216080402" y="18">98</text><text class="tl" x="281.035175879397" y="18">122</text><text class="tl" x="408.55276381909545" y="18">183</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="136.79396984924622" y1="34" x2="103.34673366834171" y2="58"/><line class="mv" x1="103.34673366834171" y1="58" x2="55.266331658291456" y2="82"/><line class="mv" x1="55.266331658291456" y1="82" x2="161.87939698492463" y2="106"/><line class="mv" x1="161.87939698492463" y1="106" x2="166.0603015075377" y2="130"/><line class="mv" x1="166.0603015075377" y1="130" x2="230.8643216080402" y2="154"/><line class="mv" x1="230.8643216080402" y1="154" x2="281.035175879397" y2="178"/><line class="mv" x1="281.035175879397" y1="178" x2="285.21608040201005" y2="202"/><line class="mv" x1="285.21608040201005" y1="202" x2="408.55276381909545" y2="226"/><circle class="pt head" cx="136.79396984924622" cy="34" r="5"/><circle class="pt" cx="103.34673366834171" cy="58" r="4"/><circle class="pt" cx="55.266331658291456" cy="82" r="4"/><circle class="pt" cx="161.87939698492463" cy="106" r="4"/><circle class="pt" cx="166.0603015075377" cy="130" r="4"/><circle class="pt" cx="230.8643216080402" cy="154" r="4"/><circle class="pt" cx="281.035175879397" cy="178" r="4"/><circle class="pt" cx="285.21608040201005" cy="202" r="4"/><circle class="pt" cx="408.55276381909545" cy="226" r="4"/></svg></div><p class="note mono">16 + 23 + 51 + 2 + 31 + 24 + 2 + 59 = <b>208</b></p><div class="avg"><span>Total head movement <b>208</b> cylinders</span></div></div></div>
+    <div class="ex"><div class="ex-h">C-LOOK · moving up first</div><div class="solve"><div class="solve-h">C-LOOK · moving up (towards 199)</div><p class="order mono">53 → 65 → 67 → 98 → 122 → 124 → 183 → 14 → 37</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 244" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="238"/><line class="tk" x1="55.266331658291456" y1="21" x2="55.266331658291456" y2="238"/><line class="tk" x1="103.34673366834171" y1="21" x2="103.34673366834171" y2="238"/><line class="tk" x1="136.79396984924622" y1="21" x2="136.79396984924622" y2="238"/><line class="tk" x1="161.87939698492463" y1="21" x2="161.87939698492463" y2="238"/><line class="tk" x1="166.0603015075377" y1="21" x2="166.0603015075377" y2="238"/><line class="tk" x1="230.8643216080402" y1="21" x2="230.8643216080402" y2="238"/><line class="tk" x1="281.035175879397" y1="21" x2="281.035175879397" y2="238"/><line class="tk" x1="285.21608040201005" y1="21" x2="285.21608040201005" y2="238"/><line class="tk" x1="408.55276381909545" y1="21" x2="408.55276381909545" y2="238"/><line class="tk" x1="442" y1="21" x2="442" y2="238"/><text class="tl" x="26" y="18">0</text><text class="tl" x="55.266331658291456" y="18">14</text><text class="tl" x="103.34673366834171" y="18">37</text><text class="tl" x="136.79396984924622" y="18">53</text><text class="tl" x="161.87939698492463" y="18">65</text><text class="tl" x="230.8643216080402" y="18">98</text><text class="tl" x="281.035175879397" y="18">122</text><text class="tl" x="408.55276381909545" y="18">183</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="136.79396984924622" y1="34" x2="161.87939698492463" y2="58"/><line class="mv" x1="161.87939698492463" y1="58" x2="166.0603015075377" y2="82"/><line class="mv" x1="166.0603015075377" y1="82" x2="230.8643216080402" y2="106"/><line class="mv" x1="230.8643216080402" y1="106" x2="281.035175879397" y2="130"/><line class="mv" x1="281.035175879397" y1="130" x2="285.21608040201005" y2="154"/><line class="mv" x1="285.21608040201005" y1="154" x2="408.55276381909545" y2="178"/><line class="mv jmp" x1="408.55276381909545" y1="178" x2="55.266331658291456" y2="202"/><line class="mv" x1="55.266331658291456" y1="202" x2="103.34673366834171" y2="226"/><circle class="pt head" cx="136.79396984924622" cy="34" r="5"/><circle class="pt" cx="161.87939698492463" cy="58" r="4"/><circle class="pt" cx="166.0603015075377" cy="82" r="4"/><circle class="pt" cx="230.8643216080402" cy="106" r="4"/><circle class="pt" cx="281.035175879397" cy="130" r="4"/><circle class="pt" cx="285.21608040201005" cy="154" r="4"/><circle class="pt" cx="408.55276381909545" cy="178" r="4"/><circle class="pt" cx="55.266331658291456" cy="202" r="4"/><circle class="pt" cx="103.34673366834171" cy="226" r="4"/></svg></div><p class="note mono">12 + 2 + 31 + 24 + 2 + 59 + <u title="jump back">169</u> + 23 = <b>322</b></p><div class="avg"><span>Total head movement <b>322</b> cylinders</span><span>Without the jump back: <b>153</b></span></div></div></div>
+    <div class="tscroll"><table class="tbl">
+      <thead><tr><th>Algorithm</th><th>Book example total</th><th>Starvation?</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="row-h">FCFS</td><td class="mono bad">640</td><td class="good">no</td><td>fair, slowest</td></tr>
+        <tr><td class="row-h">SSTF</td><td class="mono">236</td><td class="bad">yes</td><td>like SJF; common, simple</td></tr>
+        <tr><td class="row-h">SCAN (down)</td><td class="mono">236</td><td class="good">no</td><td>elevator; goes to 0</td></tr>
+        <tr><td class="row-h">C-SCAN (up)</td><td class="mono">382 (183 no jump)</td><td class="good">no</td><td>even waiting</td></tr>
+        <tr><td class="row-h">LOOK (down)</td><td class="mono good">208</td><td class="good">no</td><td>SCAN without the empty trip to the end</td></tr>
+        <tr><td class="row-h">C-LOOK (up)</td><td class="mono">322 (153 no jump)</td><td class="good">no</td><td>C-SCAN without the trips to the ends</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Which is best? <b>SSTF</b> or <b>LOOK</b> is a sensible default. Under heavy load SCAN / C-SCAN avoid starvation. Modern disks schedule inside the drive itself, and SSDs have no arm, so FCFS is fine for them.</p>
+    <div class="ex"><div class="ex-h">Your turn · head at 50, moving up · queue 82, 170, 43, 140, 24, 16, 190 · cylinders 0–199</div>
+      <p>Find the total head movement for all six. Then check yourself: open the <a href="#lab-disk">Disk calculator</a> and press <b>Practice queue</b>.</p>
+      <details class="ans"><summary>FCFS and SSTF <span class="r">answer</span></summary><div class="in"><div class="solve"><div class="solve-h">FCFS</div><p class="order mono">50 → 82 → 170 → 43 → 140 → 24 → 16 → 190</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 220" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="214"/><line class="tk" x1="59.447236180904525" y1="21" x2="59.447236180904525" y2="214"/><line class="tk" x1="76.17085427135677" y1="21" x2="76.17085427135677" y2="214"/><line class="tk" x1="115.8894472361809" y1="21" x2="115.8894472361809" y2="214"/><line class="tk" x1="130.52261306532662" y1="21" x2="130.52261306532662" y2="214"/><line class="tk" x1="197.41708542713567" y1="21" x2="197.41708542713567" y2="214"/><line class="tk" x1="318.6633165829146" y1="21" x2="318.6633165829146" y2="214"/><line class="tk" x1="381.37688442211055" y1="21" x2="381.37688442211055" y2="214"/><line class="tk" x1="423.1859296482412" y1="21" x2="423.1859296482412" y2="214"/><line class="tk" x1="442" y1="21" x2="442" y2="214"/><text class="tl" x="26" y="18">0</text><text class="tl" x="59.447236180904525" y="18">16</text><text class="tl" x="76.17085427135677" y="18">24</text><text class="tl" x="115.8894472361809" y="18">43</text><text class="tl" x="197.41708542713567" y="18">82</text><text class="tl" x="318.6633165829146" y="18">140</text><text class="tl" x="381.37688442211055" y="18">170</text><text class="tl" x="423.1859296482412" y="18">190</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="130.52261306532662" y1="34" x2="197.41708542713567" y2="58"/><line class="mv" x1="197.41708542713567" y1="58" x2="381.37688442211055" y2="82"/><line class="mv" x1="381.37688442211055" y1="82" x2="115.8894472361809" y2="106"/><line class="mv" x1="115.8894472361809" y1="106" x2="318.6633165829146" y2="130"/><line class="mv" x1="318.6633165829146" y1="130" x2="76.17085427135677" y2="154"/><line class="mv" x1="76.17085427135677" y1="154" x2="59.447236180904525" y2="178"/><line class="mv" x1="59.447236180904525" y1="178" x2="423.1859296482412" y2="202"/><circle class="pt head" cx="130.52261306532662" cy="34" r="5"/><circle class="pt" cx="197.41708542713567" cy="58" r="4"/><circle class="pt" cx="381.37688442211055" cy="82" r="4"/><circle class="pt" cx="115.8894472361809" cy="106" r="4"/><circle class="pt" cx="318.6633165829146" cy="130" r="4"/><circle class="pt" cx="76.17085427135677" cy="154" r="4"/><circle class="pt" cx="59.447236180904525" cy="178" r="4"/><circle class="pt" cx="423.1859296482412" cy="202" r="4"/></svg></div><p class="note mono">32 + 88 + 127 + 97 + 116 + 8 + 174 = <b>642</b></p><div class="avg"><span>Total head movement <b>642</b> cylinders</span></div></div><div class="solve"><div class="solve-h">SSTF</div><p class="order mono">50 → 43 → 24 → 16 → 82 → 140 → 170 → 190</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 220" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="214"/><line class="tk" x1="59.447236180904525" y1="21" x2="59.447236180904525" y2="214"/><line class="tk" x1="76.17085427135677" y1="21" x2="76.17085427135677" y2="214"/><line class="tk" x1="115.8894472361809" y1="21" x2="115.8894472361809" y2="214"/><line class="tk" x1="130.52261306532662" y1="21" x2="130.52261306532662" y2="214"/><line class="tk" x1="197.41708542713567" y1="21" x2="197.41708542713567" y2="214"/><line class="tk" x1="318.6633165829146" y1="21" x2="318.6633165829146" y2="214"/><line class="tk" x1="381.37688442211055" y1="21" x2="381.37688442211055" y2="214"/><line class="tk" x1="423.1859296482412" y1="21" x2="423.1859296482412" y2="214"/><line class="tk" x1="442" y1="21" x2="442" y2="214"/><text class="tl" x="26" y="18">0</text><text class="tl" x="59.447236180904525" y="18">16</text><text class="tl" x="76.17085427135677" y="18">24</text><text class="tl" x="115.8894472361809" y="18">43</text><text class="tl" x="197.41708542713567" y="18">82</text><text class="tl" x="318.6633165829146" y="18">140</text><text class="tl" x="381.37688442211055" y="18">170</text><text class="tl" x="423.1859296482412" y="18">190</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="130.52261306532662" y1="34" x2="115.8894472361809" y2="58"/><line class="mv" x1="115.8894472361809" y1="58" x2="76.17085427135677" y2="82"/><line class="mv" x1="76.17085427135677" y1="82" x2="59.447236180904525" y2="106"/><line class="mv" x1="59.447236180904525" y1="106" x2="197.41708542713567" y2="130"/><line class="mv" x1="197.41708542713567" y1="130" x2="318.6633165829146" y2="154"/><line class="mv" x1="318.6633165829146" y1="154" x2="381.37688442211055" y2="178"/><line class="mv" x1="381.37688442211055" y1="178" x2="423.1859296482412" y2="202"/><circle class="pt head" cx="130.52261306532662" cy="34" r="5"/><circle class="pt" cx="115.8894472361809" cy="58" r="4"/><circle class="pt" cx="76.17085427135677" cy="82" r="4"/><circle class="pt" cx="59.447236180904525" cy="106" r="4"/><circle class="pt" cx="197.41708542713567" cy="130" r="4"/><circle class="pt" cx="318.6633165829146" cy="154" r="4"/><circle class="pt" cx="381.37688442211055" cy="178" r="4"/><circle class="pt" cx="423.1859296482412" cy="202" r="4"/></svg></div><p class="note mono">7 + 19 + 8 + 66 + 58 + 30 + 20 = <b>208</b></p><div class="avg"><span>Total head movement <b>208</b> cylinders</span></div></div></div></details>
+      <details class="ans"><summary>SCAN and C-SCAN <span class="r">answer</span></summary><div class="in"><div class="solve"><div class="solve-h">SCAN · moving up (towards 199)</div><p class="order mono">50 → 82 → 140 → 170 → 190 → 199 → 43 → 24 → 16</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 244" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="238"/><line class="tk" x1="59.447236180904525" y1="21" x2="59.447236180904525" y2="238"/><line class="tk" x1="76.17085427135677" y1="21" x2="76.17085427135677" y2="238"/><line class="tk" x1="115.8894472361809" y1="21" x2="115.8894472361809" y2="238"/><line class="tk" x1="130.52261306532662" y1="21" x2="130.52261306532662" y2="238"/><line class="tk" x1="197.41708542713567" y1="21" x2="197.41708542713567" y2="238"/><line class="tk" x1="318.6633165829146" y1="21" x2="318.6633165829146" y2="238"/><line class="tk" x1="381.37688442211055" y1="21" x2="381.37688442211055" y2="238"/><line class="tk" x1="423.1859296482412" y1="21" x2="423.1859296482412" y2="238"/><line class="tk" x1="442" y1="21" x2="442" y2="238"/><text class="tl" x="26" y="18">0</text><text class="tl" x="59.447236180904525" y="18">16</text><text class="tl" x="76.17085427135677" y="18">24</text><text class="tl" x="115.8894472361809" y="18">43</text><text class="tl" x="197.41708542713567" y="18">82</text><text class="tl" x="318.6633165829146" y="18">140</text><text class="tl" x="381.37688442211055" y="18">170</text><text class="tl" x="423.1859296482412" y="18">190</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="130.52261306532662" y1="34" x2="197.41708542713567" y2="58"/><line class="mv" x1="197.41708542713567" y1="58" x2="318.6633165829146" y2="82"/><line class="mv" x1="318.6633165829146" y1="82" x2="381.37688442211055" y2="106"/><line class="mv" x1="381.37688442211055" y1="106" x2="423.1859296482412" y2="130"/><line class="mv" x1="423.1859296482412" y1="130" x2="442" y2="154"/><line class="mv" x1="442" y1="154" x2="115.8894472361809" y2="178"/><line class="mv" x1="115.8894472361809" y1="178" x2="76.17085427135677" y2="202"/><line class="mv" x1="76.17085427135677" y1="202" x2="59.447236180904525" y2="226"/><circle class="pt head" cx="130.52261306532662" cy="34" r="5"/><circle class="pt" cx="197.41708542713567" cy="58" r="4"/><circle class="pt" cx="318.6633165829146" cy="82" r="4"/><circle class="pt" cx="381.37688442211055" cy="106" r="4"/><circle class="pt" cx="423.1859296482412" cy="130" r="4"/><circle class="pt end" cx="442" cy="154" r="4"/><circle class="pt" cx="115.8894472361809" cy="178" r="4"/><circle class="pt" cx="76.17085427135677" cy="202" r="4"/><circle class="pt" cx="59.447236180904525" cy="226" r="4"/></svg></div><p class="note mono">32 + 58 + 30 + 20 + 9 + 156 + 19 + 8 = <b>332</b></p><div class="avg"><span>Total head movement <b>332</b> cylinders</span></div></div><div class="solve"><div class="solve-h">C-SCAN · moving up (towards 199)</div><p class="order mono">50 → 82 → 140 → 170 → 190 → 199 → 0 → 16 → 24 → 43</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 268" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="262"/><line class="tk" x1="59.447236180904525" y1="21" x2="59.447236180904525" y2="262"/><line class="tk" x1="76.17085427135677" y1="21" x2="76.17085427135677" y2="262"/><line class="tk" x1="115.8894472361809" y1="21" x2="115.8894472361809" y2="262"/><line class="tk" x1="130.52261306532662" y1="21" x2="130.52261306532662" y2="262"/><line class="tk" x1="197.41708542713567" y1="21" x2="197.41708542713567" y2="262"/><line class="tk" x1="318.6633165829146" y1="21" x2="318.6633165829146" y2="262"/><line class="tk" x1="381.37688442211055" y1="21" x2="381.37688442211055" y2="262"/><line class="tk" x1="423.1859296482412" y1="21" x2="423.1859296482412" y2="262"/><line class="tk" x1="442" y1="21" x2="442" y2="262"/><text class="tl" x="26" y="18">0</text><text class="tl" x="59.447236180904525" y="18">16</text><text class="tl" x="76.17085427135677" y="18">24</text><text class="tl" x="115.8894472361809" y="18">43</text><text class="tl" x="197.41708542713567" y="18">82</text><text class="tl" x="318.6633165829146" y="18">140</text><text class="tl" x="381.37688442211055" y="18">170</text><text class="tl" x="423.1859296482412" y="18">190</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="130.52261306532662" y1="34" x2="197.41708542713567" y2="58"/><line class="mv" x1="197.41708542713567" y1="58" x2="318.6633165829146" y2="82"/><line class="mv" x1="318.6633165829146" y1="82" x2="381.37688442211055" y2="106"/><line class="mv" x1="381.37688442211055" y1="106" x2="423.1859296482412" y2="130"/><line class="mv" x1="423.1859296482412" y1="130" x2="442" y2="154"/><line class="mv jmp" x1="442" y1="154" x2="26" y2="178"/><line class="mv" x1="26" y1="178" x2="59.447236180904525" y2="202"/><line class="mv" x1="59.447236180904525" y1="202" x2="76.17085427135677" y2="226"/><line class="mv" x1="76.17085427135677" y1="226" x2="115.8894472361809" y2="250"/><circle class="pt head" cx="130.52261306532662" cy="34" r="5"/><circle class="pt" cx="197.41708542713567" cy="58" r="4"/><circle class="pt" cx="318.6633165829146" cy="82" r="4"/><circle class="pt" cx="381.37688442211055" cy="106" r="4"/><circle class="pt" cx="423.1859296482412" cy="130" r="4"/><circle class="pt end" cx="442" cy="154" r="4"/><circle class="pt end" cx="26" cy="178" r="4"/><circle class="pt" cx="59.447236180904525" cy="202" r="4"/><circle class="pt" cx="76.17085427135677" cy="226" r="4"/><circle class="pt" cx="115.8894472361809" cy="250" r="4"/></svg></div><p class="note mono">32 + 58 + 30 + 20 + 9 + <u title="jump back">199</u> + 16 + 8 + 19 = <b>391</b></p><div class="avg"><span>Total head movement <b>391</b> cylinders</span><span>Without the jump back: <b>192</b></span></div></div></div></details>
+      <details class="ans"><summary>LOOK and C-LOOK <span class="r">answer</span></summary><div class="in"><div class="solve"><div class="solve-h">LOOK · moving up (towards 199)</div><p class="order mono">50 → 82 → 140 → 170 → 190 → 43 → 24 → 16</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 220" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="214"/><line class="tk" x1="59.447236180904525" y1="21" x2="59.447236180904525" y2="214"/><line class="tk" x1="76.17085427135677" y1="21" x2="76.17085427135677" y2="214"/><line class="tk" x1="115.8894472361809" y1="21" x2="115.8894472361809" y2="214"/><line class="tk" x1="130.52261306532662" y1="21" x2="130.52261306532662" y2="214"/><line class="tk" x1="197.41708542713567" y1="21" x2="197.41708542713567" y2="214"/><line class="tk" x1="318.6633165829146" y1="21" x2="318.6633165829146" y2="214"/><line class="tk" x1="381.37688442211055" y1="21" x2="381.37688442211055" y2="214"/><line class="tk" x1="423.1859296482412" y1="21" x2="423.1859296482412" y2="214"/><line class="tk" x1="442" y1="21" x2="442" y2="214"/><text class="tl" x="26" y="18">0</text><text class="tl" x="59.447236180904525" y="18">16</text><text class="tl" x="76.17085427135677" y="18">24</text><text class="tl" x="115.8894472361809" y="18">43</text><text class="tl" x="197.41708542713567" y="18">82</text><text class="tl" x="318.6633165829146" y="18">140</text><text class="tl" x="381.37688442211055" y="18">170</text><text class="tl" x="423.1859296482412" y="18">190</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="130.52261306532662" y1="34" x2="197.41708542713567" y2="58"/><line class="mv" x1="197.41708542713567" y1="58" x2="318.6633165829146" y2="82"/><line class="mv" x1="318.6633165829146" y1="82" x2="381.37688442211055" y2="106"/><line class="mv" x1="381.37688442211055" y1="106" x2="423.1859296482412" y2="130"/><line class="mv" x1="423.1859296482412" y1="130" x2="115.8894472361809" y2="154"/><line class="mv" x1="115.8894472361809" y1="154" x2="76.17085427135677" y2="178"/><line class="mv" x1="76.17085427135677" y1="178" x2="59.447236180904525" y2="202"/><circle class="pt head" cx="130.52261306532662" cy="34" r="5"/><circle class="pt" cx="197.41708542713567" cy="58" r="4"/><circle class="pt" cx="318.6633165829146" cy="82" r="4"/><circle class="pt" cx="381.37688442211055" cy="106" r="4"/><circle class="pt" cx="423.1859296482412" cy="130" r="4"/><circle class="pt" cx="115.8894472361809" cy="154" r="4"/><circle class="pt" cx="76.17085427135677" cy="178" r="4"/><circle class="pt" cx="59.447236180904525" cy="202" r="4"/></svg></div><p class="note mono">32 + 58 + 30 + 20 + 147 + 19 + 8 = <b>314</b></p><div class="avg"><span>Total head movement <b>314</b> cylinders</span></div></div><div class="solve"><div class="solve-h">C-LOOK · moving up (towards 199)</div><p class="order mono">50 → 82 → 140 → 170 → 190 → 16 → 24 → 43</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 220" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="214"/><line class="tk" x1="59.447236180904525" y1="21" x2="59.447236180904525" y2="214"/><line class="tk" x1="76.17085427135677" y1="21" x2="76.17085427135677" y2="214"/><line class="tk" x1="115.8894472361809" y1="21" x2="115.8894472361809" y2="214"/><line class="tk" x1="130.52261306532662" y1="21" x2="130.52261306532662" y2="214"/><line class="tk" x1="197.41708542713567" y1="21" x2="197.41708542713567" y2="214"/><line class="tk" x1="318.6633165829146" y1="21" x2="318.6633165829146" y2="214"/><line class="tk" x1="381.37688442211055" y1="21" x2="381.37688442211055" y2="214"/><line class="tk" x1="423.1859296482412" y1="21" x2="423.1859296482412" y2="214"/><line class="tk" x1="442" y1="21" x2="442" y2="214"/><text class="tl" x="26" y="18">0</text><text class="tl" x="59.447236180904525" y="18">16</text><text class="tl" x="76.17085427135677" y="18">24</text><text class="tl" x="115.8894472361809" y="18">43</text><text class="tl" x="197.41708542713567" y="18">82</text><text class="tl" x="318.6633165829146" y="18">140</text><text class="tl" x="381.37688442211055" y="18">170</text><text class="tl" x="423.1859296482412" y="18">190</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="130.52261306532662" y1="34" x2="197.41708542713567" y2="58"/><line class="mv" x1="197.41708542713567" y1="58" x2="318.6633165829146" y2="82"/><line class="mv" x1="318.6633165829146" y1="82" x2="381.37688442211055" y2="106"/><line class="mv" x1="381.37688442211055" y1="106" x2="423.1859296482412" y2="130"/><line class="mv jmp" x1="423.1859296482412" y1="130" x2="59.447236180904525" y2="154"/><line class="mv" x1="59.447236180904525" y1="154" x2="76.17085427135677" y2="178"/><line class="mv" x1="76.17085427135677" y1="178" x2="115.8894472361809" y2="202"/><circle class="pt head" cx="130.52261306532662" cy="34" r="5"/><circle class="pt" cx="197.41708542713567" cy="58" r="4"/><circle class="pt" cx="318.6633165829146" cy="82" r="4"/><circle class="pt" cx="381.37688442211055" cy="106" r="4"/><circle class="pt" cx="423.1859296482412" cy="130" r="4"/><circle class="pt" cx="59.447236180904525" cy="154" r="4"/><circle class="pt" cx="76.17085427135677" cy="178" r="4"/><circle class="pt" cx="115.8894472361809" cy="202" r="4"/></svg></div><p class="note mono">32 + 58 + 30 + 20 + <u title="jump back">174</u> + 8 + 19 = <b>341</b></p><div class="avg"><span>Total head movement <b>341</b> cylinders</span><span>Without the jump back: <b>167</b></span></div></div></div></details>
+    </div>
+  </article>
+
+  <article class="card" id="u6-sum">
+    <div class="card-h"><h3><span class="n">✓</span>Unit 6 on one screen (last-minute review)</h3><div class="meta"><span class="tag fin">FINAL</span></div></div>
+    <div class="tscroll"><table class="tbl">
+      <tbody>
+        <tr><td class="row-h">Parts</td><td>platter → surface → track → sector · cylinder = same track on all surfaces · one head per surface, one arm</td></tr>
+        <tr><td class="row-h">Logical blocks</td><td>the OS sees blocks 0, 1, 2…; outer cylinder first</td></tr>
+        <tr><td class="row-h">Access time</td><td>seek + rotational latency (½ × 60/RPM) + transfer (+ overhead) · 7200 RPM → 4.17 ms</td></tr>
+        <tr><td class="row-h">Capacity</td><td>surfaces × tracks × sectors × bytes · double-sided platter = 2 surfaces</td></tr>
+        <tr><td class="row-h">Attachment</td><td>host-attached (SATA, SCSI, USB, FC) · NAS (LAN, NFS/CIFS, file level) · SAN (private storage network, block level)</td></tr>
+        <tr><td class="row-h">FCFS</td><td>arrival order · fair · most movement</td></tr>
+        <tr><td class="row-h">SSTF</td><td>nearest next · like SJF · starvation</td></tr>
+        <tr><td class="row-h">SCAN</td><td>elevator: to the end, turn round · no starvation</td></tr>
+        <tr><td class="row-h">C-SCAN</td><td>to the end, jump back to the start, same direction · even wait · say if you count the jump</td></tr>
+        <tr><td class="row-h">LOOK · C-LOOK</td><td>turn (or jump) at the last request, not at the disk end</td></tr>
+        <tr><td class="row-h">Book numbers</td><td class="mono">head 53: FCFS 640 · SSTF 236 · SCAN↓ 236 · C-SCAN↑ 382/183 · LOOK↓ 208 · C-LOOK↑ 322/153</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+</section>
+
+<section class="unit" id="bprac">
+  <div class="unit-h">
+    <div class="no">Part B · practice</div>
+    <h2>Part B practice questions</h2>
+    <p>Try each one on paper first, then open the answer. Numbers are made up by Claude, in the same style as the cards.</p>
+    <div class="tags"><span class="tag fin">FINAL</span></div>
+  </div>
+
+  <article class="card" id="bprac-num">
+    <div class="card-h"><h3><span class="n">B1</span>Numericals</h3><div class="meta"><span class="cl">FROM CLAUDE · practice</span><span class="tag fin">FINAL</span></div></div>
+
+    <div class="ex"><div class="ex-h">1 · Segmentation (<a href="#b-segex">4.21</a> table: seg 0 base 1400 limit 1000 · seg 2 base 4300 limit 400 · seg 4 base 4700 limit 1000)</div>
+      <p>Find the physical address or say "trap": (2, 399) · (0, 999) · (2, 400) · (4, 0).</p>
+      <details class="ans"><summary>Answer <span class="r">answer</span></summary><div class="in"><div class="tscroll"><table class="tbl calc mono">
+        <thead><tr><th>(s, d)</th><th>d &lt; limit?</th><th>Physical</th></tr></thead>
+        <tbody>
+          <tr><td>(2, 399)</td><td class="good">399 &lt; 400 ✓</td><td>4300 + 399 = 4699</td></tr>
+          <tr><td>(0, 999)</td><td class="good">999 &lt; 1000 ✓</td><td>1400 + 999 = 2399</td></tr>
+          <tr><td>(2, 400)</td><td class="bad">400 is not &lt; 400 ✗</td><td class="bad">trap (addressing error)</td></tr>
+          <tr><td>(4, 0)</td><td class="good">0 &lt; 1000 ✓</td><td>4700 + 0 = 4700</td></tr>
+        </tbody></table></div>
+        <p class="note">Offsets run 0 … limit − 1, so offset = limit is already outside.</p></div></details>
+    </div>
+
+    <div class="ex"><div class="ex-h">2 · Disk scheduling · head at 100, moving up · queue 55, 58, 39, 18, 90, 160, 150, 38, 184 · cylinders 0–199</div>
+      <p>Total head movement for FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK.</p>
+      <details class="ans"><summary>FCFS and SSTF <span class="r">answer</span></summary><div class="in"><div class="solve"><div class="solve-h">FCFS</div><p class="order mono">100 → 55 → 58 → 39 → 18 → 90 → 160 → 150 → 38 → 184</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 268" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="262"/><line class="tk" x1="63.62814070351759" y1="21" x2="63.62814070351759" y2="262"/><line class="tk" x1="105.43718592964824" y1="21" x2="105.43718592964824" y2="262"/><line class="tk" x1="107.52763819095478" y1="21" x2="107.52763819095478" y2="262"/><line class="tk" x1="140.9748743718593" y1="21" x2="140.9748743718593" y2="262"/><line class="tk" x1="147.2462311557789" y1="21" x2="147.2462311557789" y2="262"/><line class="tk" x1="214.14070351758795" y1="21" x2="214.14070351758795" y2="262"/><line class="tk" x1="235.04522613065325" y1="21" x2="235.04522613065325" y2="262"/><line class="tk" x1="339.5678391959799" y1="21" x2="339.5678391959799" y2="262"/><line class="tk" x1="360.47236180904525" y1="21" x2="360.47236180904525" y2="262"/><line class="tk" x1="410.643216080402" y1="21" x2="410.643216080402" y2="262"/><line class="tk" x1="442" y1="21" x2="442" y2="262"/><text class="tl" x="26" y="18">0</text><text class="tl" x="63.62814070351759" y="18">18</text><text class="tl" x="105.43718592964824" y="18">38</text><text class="tl" x="140.9748743718593" y="18">55</text><text class="tl" x="214.14070351758795" y="18">90</text><text class="tl" x="235.04522613065325" y="18">100</text><text class="tl" x="339.5678391959799" y="18">150</text><text class="tl" x="360.47236180904525" y="18">160</text><text class="tl" x="410.643216080402" y="18">184</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="235.04522613065325" y1="34" x2="140.9748743718593" y2="58"/><line class="mv" x1="140.9748743718593" y1="58" x2="147.2462311557789" y2="82"/><line class="mv" x1="147.2462311557789" y1="82" x2="107.52763819095478" y2="106"/><line class="mv" x1="107.52763819095478" y1="106" x2="63.62814070351759" y2="130"/><line class="mv" x1="63.62814070351759" y1="130" x2="214.14070351758795" y2="154"/><line class="mv" x1="214.14070351758795" y1="154" x2="360.47236180904525" y2="178"/><line class="mv" x1="360.47236180904525" y1="178" x2="339.5678391959799" y2="202"/><line class="mv" x1="339.5678391959799" y1="202" x2="105.43718592964824" y2="226"/><line class="mv" x1="105.43718592964824" y1="226" x2="410.643216080402" y2="250"/><circle class="pt head" cx="235.04522613065325" cy="34" r="5"/><circle class="pt" cx="140.9748743718593" cy="58" r="4"/><circle class="pt" cx="147.2462311557789" cy="82" r="4"/><circle class="pt" cx="107.52763819095478" cy="106" r="4"/><circle class="pt" cx="63.62814070351759" cy="130" r="4"/><circle class="pt" cx="214.14070351758795" cy="154" r="4"/><circle class="pt" cx="360.47236180904525" cy="178" r="4"/><circle class="pt" cx="339.5678391959799" cy="202" r="4"/><circle class="pt" cx="105.43718592964824" cy="226" r="4"/><circle class="pt" cx="410.643216080402" cy="250" r="4"/></svg></div><p class="note mono">45 + 3 + 19 + 21 + 72 + 70 + 10 + 112 + 146 = <b>498</b></p><div class="avg"><span>Total head movement <b>498</b> cylinders</span></div></div><div class="solve"><div class="solve-h">SSTF</div><p class="order mono">100 → 90 → 58 → 55 → 39 → 38 → 18 → 150 → 160 → 184</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 268" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="262"/><line class="tk" x1="63.62814070351759" y1="21" x2="63.62814070351759" y2="262"/><line class="tk" x1="105.43718592964824" y1="21" x2="105.43718592964824" y2="262"/><line class="tk" x1="107.52763819095478" y1="21" x2="107.52763819095478" y2="262"/><line class="tk" x1="140.9748743718593" y1="21" x2="140.9748743718593" y2="262"/><line class="tk" x1="147.2462311557789" y1="21" x2="147.2462311557789" y2="262"/><line class="tk" x1="214.14070351758795" y1="21" x2="214.14070351758795" y2="262"/><line class="tk" x1="235.04522613065325" y1="21" x2="235.04522613065325" y2="262"/><line class="tk" x1="339.5678391959799" y1="21" x2="339.5678391959799" y2="262"/><line class="tk" x1="360.47236180904525" y1="21" x2="360.47236180904525" y2="262"/><line class="tk" x1="410.643216080402" y1="21" x2="410.643216080402" y2="262"/><line class="tk" x1="442" y1="21" x2="442" y2="262"/><text class="tl" x="26" y="18">0</text><text class="tl" x="63.62814070351759" y="18">18</text><text class="tl" x="105.43718592964824" y="18">38</text><text class="tl" x="140.9748743718593" y="18">55</text><text class="tl" x="214.14070351758795" y="18">90</text><text class="tl" x="235.04522613065325" y="18">100</text><text class="tl" x="339.5678391959799" y="18">150</text><text class="tl" x="360.47236180904525" y="18">160</text><text class="tl" x="410.643216080402" y="18">184</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="235.04522613065325" y1="34" x2="214.14070351758795" y2="58"/><line class="mv" x1="214.14070351758795" y1="58" x2="147.2462311557789" y2="82"/><line class="mv" x1="147.2462311557789" y1="82" x2="140.9748743718593" y2="106"/><line class="mv" x1="140.9748743718593" y1="106" x2="107.52763819095478" y2="130"/><line class="mv" x1="107.52763819095478" y1="130" x2="105.43718592964824" y2="154"/><line class="mv" x1="105.43718592964824" y1="154" x2="63.62814070351759" y2="178"/><line class="mv" x1="63.62814070351759" y1="178" x2="339.5678391959799" y2="202"/><line class="mv" x1="339.5678391959799" y1="202" x2="360.47236180904525" y2="226"/><line class="mv" x1="360.47236180904525" y1="226" x2="410.643216080402" y2="250"/><circle class="pt head" cx="235.04522613065325" cy="34" r="5"/><circle class="pt" cx="214.14070351758795" cy="58" r="4"/><circle class="pt" cx="147.2462311557789" cy="82" r="4"/><circle class="pt" cx="140.9748743718593" cy="106" r="4"/><circle class="pt" cx="107.52763819095478" cy="130" r="4"/><circle class="pt" cx="105.43718592964824" cy="154" r="4"/><circle class="pt" cx="63.62814070351759" cy="178" r="4"/><circle class="pt" cx="339.5678391959799" cy="202" r="4"/><circle class="pt" cx="360.47236180904525" cy="226" r="4"/><circle class="pt" cx="410.643216080402" cy="250" r="4"/></svg></div><p class="note mono">10 + 32 + 3 + 16 + 1 + 20 + 132 + 10 + 24 = <b>248</b></p><div class="avg"><span>Total head movement <b>248</b> cylinders</span></div></div></div></details>
+      <details class="ans"><summary>SCAN and C-SCAN <span class="r">answer</span></summary><div class="in"><div class="solve"><div class="solve-h">SCAN · moving up (towards 199)</div><p class="order mono">100 → 150 → 160 → 184 → 199 → 90 → 58 → 55 → 39 → 38 → 18</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 292" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="286"/><line class="tk" x1="63.62814070351759" y1="21" x2="63.62814070351759" y2="286"/><line class="tk" x1="105.43718592964824" y1="21" x2="105.43718592964824" y2="286"/><line class="tk" x1="107.52763819095478" y1="21" x2="107.52763819095478" y2="286"/><line class="tk" x1="140.9748743718593" y1="21" x2="140.9748743718593" y2="286"/><line class="tk" x1="147.2462311557789" y1="21" x2="147.2462311557789" y2="286"/><line class="tk" x1="214.14070351758795" y1="21" x2="214.14070351758795" y2="286"/><line class="tk" x1="235.04522613065325" y1="21" x2="235.04522613065325" y2="286"/><line class="tk" x1="339.5678391959799" y1="21" x2="339.5678391959799" y2="286"/><line class="tk" x1="360.47236180904525" y1="21" x2="360.47236180904525" y2="286"/><line class="tk" x1="410.643216080402" y1="21" x2="410.643216080402" y2="286"/><line class="tk" x1="442" y1="21" x2="442" y2="286"/><text class="tl" x="26" y="18">0</text><text class="tl" x="63.62814070351759" y="18">18</text><text class="tl" x="105.43718592964824" y="18">38</text><text class="tl" x="140.9748743718593" y="18">55</text><text class="tl" x="214.14070351758795" y="18">90</text><text class="tl" x="235.04522613065325" y="18">100</text><text class="tl" x="339.5678391959799" y="18">150</text><text class="tl" x="360.47236180904525" y="18">160</text><text class="tl" x="410.643216080402" y="18">184</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="235.04522613065325" y1="34" x2="339.5678391959799" y2="58"/><line class="mv" x1="339.5678391959799" y1="58" x2="360.47236180904525" y2="82"/><line class="mv" x1="360.47236180904525" y1="82" x2="410.643216080402" y2="106"/><line class="mv" x1="410.643216080402" y1="106" x2="442" y2="130"/><line class="mv" x1="442" y1="130" x2="214.14070351758795" y2="154"/><line class="mv" x1="214.14070351758795" y1="154" x2="147.2462311557789" y2="178"/><line class="mv" x1="147.2462311557789" y1="178" x2="140.9748743718593" y2="202"/><line class="mv" x1="140.9748743718593" y1="202" x2="107.52763819095478" y2="226"/><line class="mv" x1="107.52763819095478" y1="226" x2="105.43718592964824" y2="250"/><line class="mv" x1="105.43718592964824" y1="250" x2="63.62814070351759" y2="274"/><circle class="pt head" cx="235.04522613065325" cy="34" r="5"/><circle class="pt" cx="339.5678391959799" cy="58" r="4"/><circle class="pt" cx="360.47236180904525" cy="82" r="4"/><circle class="pt" cx="410.643216080402" cy="106" r="4"/><circle class="pt end" cx="442" cy="130" r="4"/><circle class="pt" cx="214.14070351758795" cy="154" r="4"/><circle class="pt" cx="147.2462311557789" cy="178" r="4"/><circle class="pt" cx="140.9748743718593" cy="202" r="4"/><circle class="pt" cx="107.52763819095478" cy="226" r="4"/><circle class="pt" cx="105.43718592964824" cy="250" r="4"/><circle class="pt" cx="63.62814070351759" cy="274" r="4"/></svg></div><p class="note mono">50 + 10 + 24 + 15 + 109 + 32 + 3 + 16 + 1 + 20 = <b>280</b></p><div class="avg"><span>Total head movement <b>280</b> cylinders</span></div></div><div class="solve"><div class="solve-h">C-SCAN · moving up (towards 199)</div><p class="order mono">100 → 150 → 160 → 184 → 199 → 0 → 18 → 38 → 39 → 55 → 58 → 90</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 316" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="310"/><line class="tk" x1="63.62814070351759" y1="21" x2="63.62814070351759" y2="310"/><line class="tk" x1="105.43718592964824" y1="21" x2="105.43718592964824" y2="310"/><line class="tk" x1="107.52763819095478" y1="21" x2="107.52763819095478" y2="310"/><line class="tk" x1="140.9748743718593" y1="21" x2="140.9748743718593" y2="310"/><line class="tk" x1="147.2462311557789" y1="21" x2="147.2462311557789" y2="310"/><line class="tk" x1="214.14070351758795" y1="21" x2="214.14070351758795" y2="310"/><line class="tk" x1="235.04522613065325" y1="21" x2="235.04522613065325" y2="310"/><line class="tk" x1="339.5678391959799" y1="21" x2="339.5678391959799" y2="310"/><line class="tk" x1="360.47236180904525" y1="21" x2="360.47236180904525" y2="310"/><line class="tk" x1="410.643216080402" y1="21" x2="410.643216080402" y2="310"/><line class="tk" x1="442" y1="21" x2="442" y2="310"/><text class="tl" x="26" y="18">0</text><text class="tl" x="63.62814070351759" y="18">18</text><text class="tl" x="105.43718592964824" y="18">38</text><text class="tl" x="140.9748743718593" y="18">55</text><text class="tl" x="214.14070351758795" y="18">90</text><text class="tl" x="235.04522613065325" y="18">100</text><text class="tl" x="339.5678391959799" y="18">150</text><text class="tl" x="360.47236180904525" y="18">160</text><text class="tl" x="410.643216080402" y="18">184</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="235.04522613065325" y1="34" x2="339.5678391959799" y2="58"/><line class="mv" x1="339.5678391959799" y1="58" x2="360.47236180904525" y2="82"/><line class="mv" x1="360.47236180904525" y1="82" x2="410.643216080402" y2="106"/><line class="mv" x1="410.643216080402" y1="106" x2="442" y2="130"/><line class="mv jmp" x1="442" y1="130" x2="26" y2="154"/><line class="mv" x1="26" y1="154" x2="63.62814070351759" y2="178"/><line class="mv" x1="63.62814070351759" y1="178" x2="105.43718592964824" y2="202"/><line class="mv" x1="105.43718592964824" y1="202" x2="107.52763819095478" y2="226"/><line class="mv" x1="107.52763819095478" y1="226" x2="140.9748743718593" y2="250"/><line class="mv" x1="140.9748743718593" y1="250" x2="147.2462311557789" y2="274"/><line class="mv" x1="147.2462311557789" y1="274" x2="214.14070351758795" y2="298"/><circle class="pt head" cx="235.04522613065325" cy="34" r="5"/><circle class="pt" cx="339.5678391959799" cy="58" r="4"/><circle class="pt" cx="360.47236180904525" cy="82" r="4"/><circle class="pt" cx="410.643216080402" cy="106" r="4"/><circle class="pt end" cx="442" cy="130" r="4"/><circle class="pt end" cx="26" cy="154" r="4"/><circle class="pt" cx="63.62814070351759" cy="178" r="4"/><circle class="pt" cx="105.43718592964824" cy="202" r="4"/><circle class="pt" cx="107.52763819095478" cy="226" r="4"/><circle class="pt" cx="140.9748743718593" cy="250" r="4"/><circle class="pt" cx="147.2462311557789" cy="274" r="4"/><circle class="pt" cx="214.14070351758795" cy="298" r="4"/></svg></div><p class="note mono">50 + 10 + 24 + 15 + <u title="jump back">199</u> + 18 + 20 + 1 + 16 + 3 + 32 = <b>388</b></p><div class="avg"><span>Total head movement <b>388</b> cylinders</span><span>Without the jump back: <b>189</b></span></div></div></div></details>
+      <details class="ans"><summary>LOOK and C-LOOK <span class="r">answer</span></summary><div class="in"><div class="solve"><div class="solve-h">LOOK · moving up (towards 199)</div><p class="order mono">100 → 150 → 160 → 184 → 90 → 58 → 55 → 39 → 38 → 18</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 268" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="262"/><line class="tk" x1="63.62814070351759" y1="21" x2="63.62814070351759" y2="262"/><line class="tk" x1="105.43718592964824" y1="21" x2="105.43718592964824" y2="262"/><line class="tk" x1="107.52763819095478" y1="21" x2="107.52763819095478" y2="262"/><line class="tk" x1="140.9748743718593" y1="21" x2="140.9748743718593" y2="262"/><line class="tk" x1="147.2462311557789" y1="21" x2="147.2462311557789" y2="262"/><line class="tk" x1="214.14070351758795" y1="21" x2="214.14070351758795" y2="262"/><line class="tk" x1="235.04522613065325" y1="21" x2="235.04522613065325" y2="262"/><line class="tk" x1="339.5678391959799" y1="21" x2="339.5678391959799" y2="262"/><line class="tk" x1="360.47236180904525" y1="21" x2="360.47236180904525" y2="262"/><line class="tk" x1="410.643216080402" y1="21" x2="410.643216080402" y2="262"/><line class="tk" x1="442" y1="21" x2="442" y2="262"/><text class="tl" x="26" y="18">0</text><text class="tl" x="63.62814070351759" y="18">18</text><text class="tl" x="105.43718592964824" y="18">38</text><text class="tl" x="140.9748743718593" y="18">55</text><text class="tl" x="214.14070351758795" y="18">90</text><text class="tl" x="235.04522613065325" y="18">100</text><text class="tl" x="339.5678391959799" y="18">150</text><text class="tl" x="360.47236180904525" y="18">160</text><text class="tl" x="410.643216080402" y="18">184</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="235.04522613065325" y1="34" x2="339.5678391959799" y2="58"/><line class="mv" x1="339.5678391959799" y1="58" x2="360.47236180904525" y2="82"/><line class="mv" x1="360.47236180904525" y1="82" x2="410.643216080402" y2="106"/><line class="mv" x1="410.643216080402" y1="106" x2="214.14070351758795" y2="130"/><line class="mv" x1="214.14070351758795" y1="130" x2="147.2462311557789" y2="154"/><line class="mv" x1="147.2462311557789" y1="154" x2="140.9748743718593" y2="178"/><line class="mv" x1="140.9748743718593" y1="178" x2="107.52763819095478" y2="202"/><line class="mv" x1="107.52763819095478" y1="202" x2="105.43718592964824" y2="226"/><line class="mv" x1="105.43718592964824" y1="226" x2="63.62814070351759" y2="250"/><circle class="pt head" cx="235.04522613065325" cy="34" r="5"/><circle class="pt" cx="339.5678391959799" cy="58" r="4"/><circle class="pt" cx="360.47236180904525" cy="82" r="4"/><circle class="pt" cx="410.643216080402" cy="106" r="4"/><circle class="pt" cx="214.14070351758795" cy="130" r="4"/><circle class="pt" cx="147.2462311557789" cy="154" r="4"/><circle class="pt" cx="140.9748743718593" cy="178" r="4"/><circle class="pt" cx="107.52763819095478" cy="202" r="4"/><circle class="pt" cx="105.43718592964824" cy="226" r="4"/><circle class="pt" cx="63.62814070351759" cy="250" r="4"/></svg></div><p class="note mono">50 + 10 + 24 + 94 + 32 + 3 + 16 + 1 + 20 = <b>250</b></p><div class="avg"><span>Total head movement <b>250</b> cylinders</span></div></div><div class="solve"><div class="solve-h">C-LOOK · moving up (towards 199)</div><p class="order mono">100 → 150 → 160 → 184 → 18 → 38 → 39 → 55 → 58 → 90</p><div class="tscroll diskbox"><svg class="diskc" viewBox="0 0 460 268" role="img" aria-label="Head movement chart"><line class="ax" x1="26" y1="24" x2="442" y2="24"/><line class="tk" x1="26" y1="21" x2="26" y2="262"/><line class="tk" x1="63.62814070351759" y1="21" x2="63.62814070351759" y2="262"/><line class="tk" x1="105.43718592964824" y1="21" x2="105.43718592964824" y2="262"/><line class="tk" x1="107.52763819095478" y1="21" x2="107.52763819095478" y2="262"/><line class="tk" x1="140.9748743718593" y1="21" x2="140.9748743718593" y2="262"/><line class="tk" x1="147.2462311557789" y1="21" x2="147.2462311557789" y2="262"/><line class="tk" x1="214.14070351758795" y1="21" x2="214.14070351758795" y2="262"/><line class="tk" x1="235.04522613065325" y1="21" x2="235.04522613065325" y2="262"/><line class="tk" x1="339.5678391959799" y1="21" x2="339.5678391959799" y2="262"/><line class="tk" x1="360.47236180904525" y1="21" x2="360.47236180904525" y2="262"/><line class="tk" x1="410.643216080402" y1="21" x2="410.643216080402" y2="262"/><line class="tk" x1="442" y1="21" x2="442" y2="262"/><text class="tl" x="26" y="18">0</text><text class="tl" x="63.62814070351759" y="18">18</text><text class="tl" x="105.43718592964824" y="18">38</text><text class="tl" x="140.9748743718593" y="18">55</text><text class="tl" x="214.14070351758795" y="18">90</text><text class="tl" x="235.04522613065325" y="18">100</text><text class="tl" x="339.5678391959799" y="18">150</text><text class="tl" x="360.47236180904525" y="18">160</text><text class="tl" x="410.643216080402" y="18">184</text><text class="tl" x="442" y="18">199</text><line class="mv" x1="235.04522613065325" y1="34" x2="339.5678391959799" y2="58"/><line class="mv" x1="339.5678391959799" y1="58" x2="360.47236180904525" y2="82"/><line class="mv" x1="360.47236180904525" y1="82" x2="410.643216080402" y2="106"/><line class="mv jmp" x1="410.643216080402" y1="106" x2="63.62814070351759" y2="130"/><line class="mv" x1="63.62814070351759" y1="130" x2="105.43718592964824" y2="154"/><line class="mv" x1="105.43718592964824" y1="154" x2="107.52763819095478" y2="178"/><line class="mv" x1="107.52763819095478" y1="178" x2="140.9748743718593" y2="202"/><line class="mv" x1="140.9748743718593" y1="202" x2="147.2462311557789" y2="226"/><line class="mv" x1="147.2462311557789" y1="226" x2="214.14070351758795" y2="250"/><circle class="pt head" cx="235.04522613065325" cy="34" r="5"/><circle class="pt" cx="339.5678391959799" cy="58" r="4"/><circle class="pt" cx="360.47236180904525" cy="82" r="4"/><circle class="pt" cx="410.643216080402" cy="106" r="4"/><circle class="pt" cx="63.62814070351759" cy="130" r="4"/><circle class="pt" cx="105.43718592964824" cy="154" r="4"/><circle class="pt" cx="107.52763819095478" cy="178" r="4"/><circle class="pt" cx="140.9748743718593" cy="202" r="4"/><circle class="pt" cx="147.2462311557789" cy="226" r="4"/><circle class="pt" cx="214.14070351758795" cy="250" r="4"/></svg></div><p class="note mono">50 + 10 + 24 + <u title="jump back">166</u> + 20 + 1 + 16 + 3 + 32 = <b>322</b></p><div class="avg"><span>Total head movement <b>322</b> cylinders</span><span>Without the jump back: <b>156</b></span></div></div></div></details>
+    </div>
+
+    <div class="ex"><div class="ex-h">3 · Disk capacity</div>
+      <p>A disk has 4 double-sided platters, 4096 tracks per surface, 256 sectors per track, 512 B per sector. Find the capacity, one track and one cylinder.</p>
+      <details class="ans"><summary>Answer <span class="r">answer</span></summary><div class="in"><div class="tscroll"><table class="tbl calc mono"><tbody>
+        <tr><td class="row-h">Surfaces</td><td>4 × 2 = 8 = 2³</td></tr>
+        <tr><td class="row-h">One track</td><td>256 × 512 = 2⁸ × 2⁹ = 2¹⁷ B = 128 KB</td></tr>
+        <tr><td class="row-h">One cylinder</td><td>8 × 128 KB = 1 MB</td></tr>
+        <tr><td class="row-h">Disk</td><td>2³ × 2¹² × 2⁸ × 2⁹ = 2³² B = 4 GB</td></tr>
+      </tbody></table></div></div></details>
+    </div>
+
+    <div class="ex"><div class="ex-h">4 · Access time</div>
+      <p>10 000 RPM disk, average seek 4 ms, transfer time 0.05 ms, no overhead. Average access time?</p>
+      <details class="ans"><summary>Answer <span class="r">answer</span></summary><div class="in"><p class="mono">one turn = 60 000 ÷ 10 000 = 6 ms → latency = 3 ms<br>4 + 3 + 0.05 = 7.05 ms</p></div></details>
+    </div>
+
+    <div class="ex"><div class="ex-h">5 · inode with 8 KB blocks and 4 B pointers</div>
+      <p>How much data can the 12 direct, single, double and triple indirect pointers reach?</p>
+      <details class="ans"><summary>Answer <span class="r">answer</span></summary><div class="in"><div class="tscroll"><table class="tbl calc mono"><tbody>
+        <tr><td class="row-h">Pointers per block</td><td>8192 ÷ 4 = 2048 = 2¹¹</td></tr>
+        <tr><td class="row-h">12 direct</td><td>12 × 8 KB = 96 KB</td></tr>
+        <tr><td class="row-h">single</td><td>2¹¹ × 2¹³ = 2²⁴ = 16 MB</td></tr>
+        <tr><td class="row-h">double</td><td>2²² × 2¹³ = 2³⁵ = 32 GB</td></tr>
+        <tr><td class="row-h">triple</td><td>2³³ × 2¹³ = 2⁴⁶ = 64 TB</td></tr>
+      </tbody></table></div></div></details>
+    </div>
+
+    <div class="ex"><div class="ex-h">6 · Bitmap size and allocation reads</div>
+      <p>(a) A 512 GB disk with 4 KB blocks uses a bit vector. How big is it? (b) To read block 7 of a file (counting from 0), how many disk reads does contiguous, linked and indexed allocation need?</p>
+      <details class="ans"><summary>Answer <span class="r">answer</span></summary><div class="in">
+        <p class="mono">(a) 2³⁹ ÷ 2¹² = 2²⁷ blocks → 2²⁷ bits = 2²⁴ B = 16 MB</p>
+        <div class="tscroll"><table class="tbl calc"><thead><tr><th>(b)</th><th>Reads</th><th>Why</th></tr></thead><tbody>
+          <tr><td class="row-h">Contiguous</td><td class="mono good">1</td><td>address = start + 7</td></tr>
+          <tr><td class="row-h">Linked</td><td class="mono bad">8</td><td>blocks 0 … 6 must be read to find the pointer to 7, then block 7</td></tr>
+          <tr><td class="row-h">Indexed</td><td class="mono good">1 (2)</td><td>1 if the index block is already in memory, 2 if it must be read first</td></tr>
+        </tbody></table></div></div></details>
+    </div>
+  </article>
+
+  <article class="card" id="bprac-short">
+    <div class="card-h"><h3><span class="n">B2</span>Paths, permissions and theory</h3><div class="meta"><span class="cl">FROM CLAUDE · practice</span><span class="tag fin">FINAL</span></div></div>
+    <div class="ex"><div class="ex-h">7 · Relative paths (tree in <a href="#u5-path">5.8</a>) · current directory /spell/mail/prog</div>
+      <p>Write a relative path to: /spell/mail/copy · /spell/stat · /bin/count.</p>
+      <details class="ans"><summary>Answer <span class="r">answer</span></summary><div class="in"><p class="mono">../copy · ../../stat · ../../../bin/count</p></div></details>
+    </div>
+    <div class="ex"><div class="ex-h">8 · Permissions</div>
+      <p>Write as letters: 754, 640. Write as digits: rwxr-x---, -rw-r--r--. Who may run a file with 711?</p>
+      <details class="ans"><summary>Answer <span class="r">answer</span></summary><div class="in"><p class="mono">754 = rwxr-xr-- · 640 = rw-r----- · rwxr-x--- = 750 · -rw-r--r-- = 644<br>711 = rwx--x--x: everyone may execute it; only the owner may read or change it.</p></div></details>
+    </div>
+    <div class="ex"><div class="ex-h">9 · Theory checklist (write 5–6 lines each, then compare with the card)</div>
+      <ol class="nsteps">
+        <li>Compare paging and segmentation. → <a href="#b-seg">4.20</a></li>
+        <li>List the file attributes and the file operations. → <a href="#u5-attr">5.1</a>, <a href="#u5-ops">5.2</a></li>
+        <li>Explain sequential, direct and indexed access. → <a href="#u5-access">5.4</a></li>
+        <li>Explain the five directory structures with diagrams. → <a href="#u5-dir">5.7</a></li>
+        <li>What is mounting? What is a mount point? → <a href="#u5-mount">5.9</a></li>
+        <li>Explain UNIX, session and immutable-file semantics. → <a href="#u5-share">5.10</a></li>
+        <li>Compare contiguous, linked and indexed allocation. → <a href="#u5-alloc">5.13</a></li>
+        <li>Draw a disk and label platter, track, sector, cylinder, head. → <a href="#u6-struct">6.1</a></li>
+        <li>Compare host-attached storage, NAS and SAN. → <a href="#u6-attach">6.4</a></li>
+        <li>Compare SCAN and C-SCAN. Which one can starve? (Answer: neither; SSTF can.) → <a href="#u6-scan">6.6</a></li>
+      </ol>
+    </div>
+  </article>
+</section>
 
 <section class="unit" id="src">
   <div class="unit-h">
@@ -3897,15 +4893,15 @@ while (true) {
         <tr><td class="row-h">ch8</td><td>Deadlocks</td><td>Unit 3</td></tr>
         <tr><td class="row-h">ch9</td><td>Main Memory</td><td>Unit 4</td></tr>
         <tr><td class="row-h">ch10</td><td>Virtual Memory</td><td>Unit 4</td></tr>
-        <tr><td class="row-h">ch13</td><td>File-System Interface</td><td>Unit 5</td></tr>
+        <tr><td class="row-h">ch13</td><td>File-System Interface</td><td>Unit 5 (5.1–5.4, 5.6–5.8, 5.11)</td></tr>
       </tbody>
     </table></div>
-    <div class="warn"><span>No slides yet for ch4 Threads, ch7 Synchronization Examples, ch11 Mass Storage (disk) or ch14 File-System Implementation. Those topics are marked <span class="cl">FROM CLAUDE</span>.</span></div>
+    <div class="warn"><span>No slides yet for ch4 Threads, ch7 Synchronization Examples, ch11 Mass Storage (disk) ch14 File-System Implementation or ch15 File-System Internals (mounting, sharing). Segmentation is not in 10e at all: it comes from 9e ch8. Those topics are marked <span class="cl">FROM CLAUDE</span>.</span></div>
   </article>
   <article class="card claude">
     <div class="card-h"><h3>What I used for the FROM CLAUDE parts</h3><div class="meta"><span class="cl">FROM CLAUDE</span></div></div>
     <div class="grid2">
-      <div class="box"><b>Textbooks</b>Silberschatz, Galvin, Gagne · <i>Operating System Concepts</i> 10e (same book as your slides)<br>Tanenbaum, Bos · <i>Modern Operating Systems</i> 4e (lock variable, Peterson, TSL, sleep/wakeup)<br>Stallings · <i>Operating Systems: Internals and Design Principles</i> 9e (fetch policy, frame allocation)</div>
+      <div class="box"><b>Textbooks</b>Silberschatz, Galvin, Gagne · <i>Operating System Concepts</i> 10e (same book as your slides) and 9e (segmentation, disk examples)<br>Book slides: <a href="https://www.os-book.com/OS10/slide-dir/index.html">OS10 slide index</a> · <a href="https://www.os-book.com/OS9/slide-dir/index.html">OS9 slide index</a><br>Tanenbaum, Bos · <i>Modern Operating Systems</i> 4e (lock variable, Peterson, TSL, sleep/wakeup)<br>Stallings · <i>Operating Systems: Internals and Design Principles</i> 9e (fetch policy, frame allocation)</div>
       <div class="box"><b>University notes I checked against</b>
         <a href="https://www.cct.lsu.edu/~kosar/csc4103-spring08/slides/18-Mass_Storage_IO-I.pdf">LSU · mass storage</a> ·
         <a href="https://www.scribd.com/document/524472449/diskschedulingalgorithms">Disk scheduling (Scribd)</a> ·
@@ -3923,7 +4919,7 @@ while (true) {
 </section>
 
 <footer>
-  Made for Pao · BCA Sem III · Operating Systems (T7998) · class test 21 Oct 2026. Ticks and theme are saved only in this browser.
+  Made for Pao · BCA Sem III · Operating Systems (T7998) · class test 21 Oct 2026 · Part B added for the final exam (Units 1–6). Ticks and theme are saved only in this browser.
 </footer>
 </main>
 <script>
